@@ -1,0 +1,27 @@
+
+// Define Colors Hasg
+$colors: (
+  red: $red,
+  blue: $blue,
+  yellow: $yellow,
+  orange: $orange,
+  green: $green,
+  purple: $purple,
+  black: $black,
+  white: $white,
+);
+
+
+// Text Colors
+
+@each $color-id, $color in $colors {
+  .#{"" + $color-id}.#{"" + $color-id} { color: $color; }
+}
+
+
+// Backgrounds
+@each $color-id, $color in $colors {
+  .bg-#{"" + $color-id} {
+    background: $color;
+  }
+}
