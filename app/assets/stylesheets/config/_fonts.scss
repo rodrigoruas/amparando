@@ -2,8 +2,8 @@
 @import url("https://fonts.googleapis.com/css?family=Roboto:400,500,700");
 
 // Define fonts for body and headers
-$body-font: "Roboto", "sans-serif";
-$headers-font: "Roboto", "sans-serif";
+$base-font: "Roboto", "sans-serif";
+$header-font: "Roboto", "sans-serif";
 
 // To use a font file (.woff) uncomment following lines
 // @font-face {
@@ -14,3 +14,15 @@ $headers-font: "Roboto", "sans-serif";
 //        font-url('FontFile.ttf') format('truetype')
 // }
 // $my-font: "Font Name";
+
+// Font-size and line-height
+$small-size: 13px;
+$base-size: 16px;
+$medium-size: 18px;
+$big-size: 25px;
+$base-height: 1.428571429;
+$base-radius: 2px;
+
+$bold-size: 20px;
+
+$font-light: 300;

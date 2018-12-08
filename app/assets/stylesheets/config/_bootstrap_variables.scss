@@ -1,25 +1,71 @@
-// This is where you override default Bootstrap variables
-// 1. All Bootstrap variables are here => https://github.com/twbs/bootstrap-sass/blob/master/assets/stylesheets/bootstrap/_variables.scss
-// 2. These variables are defined with default value (see https://robots.thoughtbot.com/sass-default)
-// 3. You can override them below!
+/* -------------------------------------
+ * Bootstrap sass variable
+ * (see http://getbootstrap.com/customize/#less-variables)
+ * ------------------------------------- */
 
 // General style
-$font-family-sans-serif:  $body-font;
-$headings-font-family:    $headers-font;
-$body-bg:                 $light-gray;
-$font-size-base: 18px;
+$font-family-sans-serif:  $base-font;
+$body-bg:                 white;
+$font-size-base:          $base-size;
+$font-size-small:         $small-size;
+$font-size-large:         $base-size;
+$line-height-base:        $base-height;
+$headings-font-family:    $header-font;
+$headings-font-weight:    400;
 
-// Colors
-$gray-base:       $gray;
-$brand-primary:   $blue;
+$padding-large-vertical: 14px;
+
+// Scale based on :
+// http://type-scale.com/?size=16&scale=1.250&text=A%20Spooky,%20Visual%20Type%20Scale&webfont=Rubik&font-family=%27Rubik%27%2C%20cursive&font-weight=400&font-family-headers=&font-weight-headers=inherit&background-color=black&font-color=%23b10dc9
+$font-size-h1: floor(($font-size-base * 2.074));
+$font-size-h2: floor(($font-size-base * 1.65));
+$font-size-h3: floor(($font-size-base * 1.44));
+$font-size-h4: floor(($font-size-base * 1.2));
+
+// Semantic color scheme
+// => http://getbootstrap.com/customize/#colors
+$gray-base:       $black;
+$brand-primary:   $yellow;
 $brand-success:   $green;
-$brand-info:      $yellow;
-$brand-danger:    $red;
+$brand-info:      $blue;
 $brand-warning:   $orange;
+$brand-danger:    $red;
+$brand-attention: $purple;
 
-// Buttons & inputs' radius
-$border-radius-base:  2px;
+// States for forms, alerts and panels
+$state-success-bg: $green;
+$state-info-bg: $blue;
+$state-warning-bg: $yellow;
+$state-danger-bg: $red;
+$state-success-text: $white;
+$state-info-text: $white;
+$state-warning-text: $white;
+$state-danger-text: $white;
+
+$input-height-large: 55px;
+
+// Buttons / inputs radius
+$border-radius-base:  3px;
 $border-radius-large: 2px;
 $border-radius-small: 2px;
+$alert-border-radius: 0;
 
-// Override other variables below!
+// Alerts
+$alert-success-border: transparent;
+$alert-info-border: transparent;
+$alert-warning-border: transparent;
+$alert-danger-border: transparent;
+
+// Jumbotron
+// $jumbotron-bg: $white-bis;
+
+// Small buttons vars
+// Our small buttons has the same font-size, we just play on the padding
+// .btn-sm {
+//   // line-height: ensure proper height of button next to small input
+//   .button-size(@padding-small-vertical; @padding-small-horizontal; @font-size-small; @line-height-small; @btn-border-radius-small);
+// }
+$btn-primary-color: $black;
+
+// Typography colors
+$text-color: $gray-base;
