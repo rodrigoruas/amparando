@@ -1,0 +1,26 @@
+.wrapper
+  .bg-green
+    .container
+      .navbar-wagon
+        = link_to root_path, class: "navbar-wagon-brand" do
+          = image_tag('logo-new.jpg', height: 35)
+
+        .navbar-wagon-right.visible-xs.visible-sm
+          .navbar-inline
+        .navbar-wagon-right.hidden-xs.hidden-sm
+          = link_to "Quem Somos", '/blog', class: "navbar-wagon-item navbar-wagon-link"
+          = link_to "Quero Ajudar", '/blog', class: "navbar-wagon-item navbar-wagon-link"
+          = link_to "Campanhas", '/blog', class: "navbar-wagon-item navbar-wagon-link"
+          = link_to "Blog", '/blog', class: "navbar-wagon-item navbar-wagon-link"
+          = link_to "Login", '/blog', class: "navbar-wagon-item navbar-wagon-link"
+          a.btn-warning.btn-orange.btn-lg.btn-navbar.text-center.pad-left-sm.pad-right-sm data-turbolinks="false" href="#instant-booking" DOE AGORA
+
+        .navbar-wagon-item.hidden-md.hidden-lg
+          .dropdown
+            i.fas.fa-bars.fa-2x.dropdown-toggle[data-toggle="dropdown"]
+            ul.dropdown-menu.dropdown-menu-right.navbar-wagon-dropdown-menu
+              li= link_to "Quem Somos", '/blog', class: "navbar-wagon-item navbar-wagon-link"
+              li= link_to "Quero Ajudar", '/blog', class: "navbar-wagon-item navbar-wagon-link"
+              li= link_to "Campanhas", '/blog', class: "navbar-wagon-item navbar-wagon-link"
+              li= link_to "Blog", '/blog', class: "navbar-wagon-item navbar-wagon-link"
+              li= link_to "Login", '/blog', class: "navbar-wagon-item navbar-wagon-link"

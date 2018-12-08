@@ -1,0 +1,49 @@
+$space-0: 0px !default;
+$space-xs: 10px !default;
+$space-sm: 15px !default;
+$space-md: 30px !default;
+$space-lg: 60px !default;
+
+$space-sizes: (
+  0: $space-0,
+  xs: $space-xs,
+  sm: $space-sm,
+  md: $space-md,
+  lg: $space-lg
+);
+
+$space-types: (
+  pad: padding,
+  mar: margin
+);
+
+$space-directions: top, bottom, left, right;
+
+.margin-auto { margin: 0 auto; }
+
+.padded {
+  padding-top: 5em;
+  padding-bottom: 5em;
+}
+
+@each $size-id, $size in $space-sizes {
+  @each $type-id, $type in $space-types {
+    .#{$type-id}-#{$size-id} {
+      #{$type}: #{$size};
+    }
+    .#{$type-id}-hori-#{$size-id} {
+      #{$type}-left: #{$size};
+      #{$type}-right: #{$size};
+    }
+    .#{$type-id}-vert-#{$size-id} {
+      #{$type}-top: #{$size};
+      #{$type}-bottom: #{$size};
+    }
+
+    @each $direction in $space-directions {
+      .#{$type-id}-#{$direction}-#{$size-id} {
+        #{$type}-#{$direction}: #{$size};
+      }
+    }
+  }
+}
