@@ -12,6 +12,7 @@ $font-size-large:         $base-size;
 $line-height-base:        $base-height;
 $headings-font-family:    $header-font;
 $headings-font-weight:    400;
+$headings-line-height:    1.1 !default;
 
 $padding-large-vertical: 14px;
 
@@ -56,15 +57,7 @@ $alert-info-border: transparent;
 $alert-warning-border: transparent;
 $alert-danger-border: transparent;
 
-// Jumbotron
-// $jumbotron-bg: $white-bis;
 
-// Small buttons vars
-// Our small buttons has the same font-size, we just play on the padding
-// .btn-sm {
-//   // line-height: ensure proper height of button next to small input
-//   .button-size(@padding-small-vertical; @padding-small-horizontal; @font-size-small; @line-height-small; @btn-border-radius-small);
-// }
 $btn-primary-color: $black;
 
 // Typography colors
