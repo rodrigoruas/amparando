@@ -1,0 +1,14 @@
+.circle {
+  background: transparent;
+  border-radius: 50%;
+  border-style: solid;
+  border-width: 5px;
+  box-sizing: border-box;
+  border-color: $orange;
+  width: 200px;
+  height: 200px;
+
+  h1 {
+    font-size: floor(($font-size-base * 3));
+  }
+}
