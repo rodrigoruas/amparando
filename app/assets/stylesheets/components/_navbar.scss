@@ -1,67 +1,113 @@
-/* Main navbar */
+/* Main class */
 .navbar-wagon {
-  box-shadow: 0 1px 5px 0 rgba(0,0,0,0.07),0 1px 0 0 rgba(0,0,0,0.03);
-  background: white;
-  transition: all 0.3s ease;
-  height: 70px;
-  padding: 0px 30px;
   display: flex;
+  height: $space-lg;
   align-items: center;
   justify-content: space-between;
+  font-size: $medium-size;
 }
 
-/* Logo */
-.navbar-wagon-brand img {
-  height: 50px;
+/* Optional class to fix the navbar on top */
+.navbar-wagon-fixed {
+  position: fixed;
+  left: 0px;
+  top: 0px;
+  width: 100%;
+  margin-bottom: 22px;
 }
 
-/* User Avatar */
-.navbar-wagon .avatar {
-  height: 35px;
-  width: 35px;
-  border-radius: 50%;
-}
-
-/* Right section */
+/* Navbar right section (with form, links, button) */
 .navbar-wagon-right {
   display: flex;
   align-items: center;
   justify-content: space-between;
 }
 
-/* Basic navbar item */
+
+/* Navbar item */
 .navbar-wagon-item {
+  flex: 0 1 auto;
   cursor: pointer;
-  padding: 0 20px;
+  padding: 0 $space-sm;
+  color: $white;
+
+  // .fa { color: $gray-light; }
 }
 
-/* Navbar link */
-.navbar-wagon-link {
-  color: #616668;
-  font-size: 14px;
-}
+/* Navbar standard link */
 .navbar-wagon-link:hover {
-  color: #da552f;
+  color: $orange;
   text-decoration: none;
 }
 
-/* Dropdown menu */
+/* Navbar right button */
+.navbar-wagon-button {
+  margin-left: 10px;
+  padding: 0 20px;
+  border-radius: 20em;
+  line-height: 40px;
+  background-color: $red;
+  color: white;
+  font-size: 14px;
+  // border: $border-sm solid $red;
+}
+.navbar-wagon-button:hover {
+  color: white;
+  background: $red;
+  border-color: $red;
+}
+
+/* Navbar search form */
+.navbar-wagon-search {
+  flex: 0 1 300px;
+  display: flex;
+  justify-content: flex-end;
+  padding: 0 10px;
+  position: relative;
+}
+.navbar-wagon-search-btn {
+  line-height: 40px;
+  color: #E6E6E6;
+  border: none;
+  background: transparent;
+  position: absolute;
+  right: 14px;
+  top: -2px;
+  z-index: 1;
+}
+.navbar-wagon-search-input {
+  flex: 0 1 300px;
+  transition: all 0.15s ease;
+  line-height: 40px;
+  font-weight: lighter;
+  color: #666666;
+  border: 1px solid #E6E6E6;
+  border-radius: 5px;
+  padding: 0 10px;
+  font-size: 14px;
+  outline: none;
+}
+.navbar-wagon-search-input:focus  {
+  border: 1px solid #CCCCCC;
+}
+
+/* Navbar dropdown menu */
 .navbar-wagon-dropdown-menu {
   margin-top: 15px;
-  box-shadow: 1px 1px 4px #E6E6E6;
+  box-shadow: none;
   border-color: #E6E6E6;
 }
 .navbar-wagon-dropdown-menu li > a {
   transition: color 0.3s ease;
   font-weight: lighter !important;
-  color: #999999 !important;
+  // color: $black-bis !important;
   font-size: 15px !important;
   line-height: 22px !important;
   padding: 10px 20px;
 }
 .navbar-wagon-dropdown-menu li > a:hover {
   background: transparent !important;
-  color: black !important;
+  color: $black !important;
 }
 .navbar-wagon-dropdown-menu:before {
   content: ' ';
@@ -74,4 +120,36 @@
   transform: rotate(45deg);
   border-left: 1px solid #E6E6E6;
   border-top: 1px solid #E6E6E6;
+}
+
+.navbar-inline {
+  display: flex !important;
+}
+
+.navbar-shadow {
+  box-shadow: 0 2px 6px 0 hsla(0, 0%, 0%, 0.2);
+}
+
+// Borders
+// .border-top-red {
+//   border-top: $border-sm solid $red;
+// }
+
+// .dropdown-border-top-soft {
+//   border-top: $border-xs solid $gray-light;
+// }
+
+// Search navbar
+.btn-dropdown {
+  background-color: transparent;
+}
+
+.input-group {
+  max-width: 500px;
+  button>i{
+    color: $white;
+  }
+  .form-control[readonly]{
+    background-color: $white;
+  }
 }
