@@ -20,28 +20,6 @@
   }
 }
 
-.item.bg {
-  height: 100vh;
-  background-size: cover !important;
-  background-repeat: no-repeat;
-}
-
-.item.bg1 {
-  background-image: url('https://images.unsplash.com/photo-1531206715517-5c0ba140b2b8?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=750&q=80');
-}
-
-.item.bg2 {
-  background-image: url('https://images.unsplash.com/photo-1516012999909-1dd29c71d3a8?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1350&q=80')
-}
-
-.item.bg3 {
-  background-image: url('https://images.unsplash.com/photo-1521493959102-bdd6677fdd81?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=750&q=80')
-}
-
-.item img {
-  visibility: hidden
-}
-
 .banner-wo-header-full { min-height: calc(100vh - 60px);}
 .banner-wo-header-two-thirds { min-height: calc(66vh - 60px);}
 .banner-wo-header-half { min-height: calc(50vh - 60px);}
