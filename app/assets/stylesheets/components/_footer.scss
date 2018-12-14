@@ -1,0 +1,12 @@
+.footer {
+  min-height: $space-lg;
+  align-items: center;
+  font-size: $small-size;
+}
+.first-row {
+  display: flex;
+  justify-content: space-between;
+}
+.footer-icons {
+  font-size: 40px;
+}

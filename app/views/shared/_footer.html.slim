@@ -1,0 +1,40 @@
+.wrapper
+  .bg-white.mar-md.pad-lg
+    .container
+      .footer
+        .first-row
+          .col-xs-12.col-sm-6
+            .footer-left.pad-left-md
+              .footer-links.pad-bottom-sm
+                h4.gray
+                  |Siga a Amparando nas redes sociais
+                  .footer-icons
+                    =link_to "https://www.instagram.com/institutoamparando/" do
+                      i.fab.fa-instagram.pad-sm
+                    =link_to "https://www.facebook.com/AmparandoJG/" do
+                      i.fab.fa-facebook.pad-sm
+              .form-group
+                label
+                  h4.gray
+                    |Receba nossa newsletter
+                .form-inline
+                  input.form-control type="email" placeholder="Email"
+                  button.btn.btn-danger.btn-yellow
+                    |Cadastrar
+          .col-xs-12.col-sm-6
+            h3.gray.text-center
+              |Venha nos visitar!
+            .map
+            =render 'locations/index'
+        .second-row
+          .col-xs-12
+            .text-center
+              p.gray
+                |R. Tocantins, 33 - Jardim Gramacho, Duque de Caxias - RJ, 25055-390
+                br
+                i.fas.fa-phone
+                |    21.3673-1547
+                br
+                i.far.fa-envelope
+                |    contato@amparando.com.br
+
