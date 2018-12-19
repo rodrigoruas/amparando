@@ -1,3 +1,52 @@
+// Button Default
+.btn {
+  text-shadow: 0px 1px rgba(0, 0, 0, 0.25);
+  font-weight: 100;
+  border-width: 2px;
+  padding-top: 5px;
+  padding-bottom: 5px;
+  border-color: currentColor;
+  opacity: 0.85;
+  font-size: inherit;
+  &:hover {
+    opacity: 1;
+  }
+}
+
+.navbar {
+  border-radius: 5px;
+}
+
+// Button Sizes
+.xs { font-size: $small-size; }
+.sm { font-size: $base-size; }
+.md { font-size: $medium-size; }
+.lg { font-size: $big-size; }
+
+// Border Styles
+  .sld {border-style: solid;}
+  .dbl {border-style: double;}
+  .dot {border-style: dotted;}
+  .dsh {border-style: dashed;}
+  .rid {border-style: ridge;}
+  .ist {border-style: inset;}
+  .ost {border-style: outset;}
+  .grv {border-style: groove;}
+  .non {border-style: none;}
+  .hdd {border-style: hidden;}
+
+// Border Radius
+  .semi-rounded { border-radius: $small-size; }
+  .full-rounded { border-radius: $medium-size; }
+
+
+// ***** OLD Buttons for REVIEW *****
+.btn-navbar {
+  padding-top: 5px;
+  padding-bottom: 5px;
+  border-radius: 5px;
+}
+
 .btn-primary.btn-lg {
   font-size: $font-size-h4;
   text-shadow: 0px 1px rgba(0, 0, 0, 0.25);
@@ -18,12 +67,6 @@
   &:hover {
     opacity:0.8;
   }
-}
-
-.btn-navbar {
-  padding-top: 5px;
-  padding-bottom: 5px;
-  border-radius: 5px;
 }
 
 .btn-red {
