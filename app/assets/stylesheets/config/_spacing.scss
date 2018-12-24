@@ -3,13 +3,15 @@ $space-xs: 10px !default;
 $space-sm: 15px !default;
 $space-md: 30px !default;
 $space-lg: 60px !default;
+$space-xl: 90px !default;
 
 $space-sizes: (
   0: $space-0,
   xs: $space-xs,
   sm: $space-sm,
   md: $space-md,
-  lg: $space-lg
+  lg: $space-lg,
+  xl: $space-xl
 );
 
 $space-types: (

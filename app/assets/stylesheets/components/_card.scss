@@ -1,0 +1,12 @@
+.card {
+  position: relative;
+  background-size: cover !important;
+  background-position: center;
+  min-height: 17vh;
+}
+
+.card-title {
+  position: absolute;
+  top: 100%;
+  width: 100%;
+}
