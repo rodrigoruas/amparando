@@ -13,31 +13,12 @@
   }
 }
 
-.navbar {
-  border-radius: 5px;
-}
-
 // Button Sizes
-.xs { font-size: $small-size; }
-.sm { font-size: $base-size; }
-.md { font-size: $medium-size; }
-.lg { font-size: $big-size; }
+// .btn-xs { font-size: $small-size; }
+// .btn-sm { font-size: $base-size; }
+// .btn-md { font-size: $medium-size; }
+// .btn-lg { font-size: $big-size; }
 
-// Border Styles
-  .sld {border-style: solid;}
-  .dbl {border-style: double;}
-  .dot {border-style: dotted;}
-  .dsh {border-style: dashed;}
-  .rid {border-style: ridge;}
-  .ist {border-style: inset;}
-  .ost {border-style: outset;}
-  .grv {border-style: groove;}
-  .non {border-style: none;}
-  .hdd {border-style: hidden;}
-
-// Border Radius
-  .semi-rounded { border-radius: $small-size; }
-  .full-rounded { border-radius: $medium-size; }
 
 
 // ***** OLD Buttons for REVIEW *****
