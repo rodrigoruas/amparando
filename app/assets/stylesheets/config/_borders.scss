@@ -1,0 +1,15 @@
+// Border Styles
+  .sld {border-style: solid;}
+  .dbl {border-style: double;}
+  .dot {border-style: dotted;}
+  .dsh {border-style: dashed;}
+  .rid {border-style: ridge;}
+  .ist {border-style: inset;}
+  .ost {border-style: outset;}
+  .grv {border-style: groove;}
+  .non {border-style: none;}
+  .hdd {border-style: hidden;}
+
+// Border Radius
+  .semi-rounded { border-radius: $small-size; }
+  .full-rounded { border-radius: $medium-size; }
