@@ -26,6 +26,7 @@ gem 'font-awesome-sass', '~> 5.0.9'
 gem 'simple_form'
 gem 'autoprefixer-rails'
 gem 'jquery-rails'
+gem 'devise'
 # End of basic LW Setup Gems that are required
 
 # Use CoffeeScript for .coffee assets and views
