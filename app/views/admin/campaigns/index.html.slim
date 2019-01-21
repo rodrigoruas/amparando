@@ -1,0 +1,29 @@
+.container
+  .row.pad-sm.mar-top-md
+    = link_to "CRIAR CAMPANHA", new_admin_campaign_path, class: "btn-warning btn-lg"
+  .row.pad-lg
+    - @campaigns.each do |campaign|
+      .col-sm-12
+        .card.mar-top-md.pad-sm.border-green.sld.bg-gray
+          .row
+            .col-xs-3
+              = image_tag ( "https://res.cloudinary.com/dib2nyadi/image/upload/c_scale,h_150/v1544719851/Amparando/child.jpg"), class: "semi-rounded mar-top-md"
+            .col-xs-9
+              .green.flex.jcsb
+                h3
+                  = campaign.title
+                h3
+                  = humanized_money_with_symbol(campaign.price)
+              == campaign.description
+              .mar-top-md.flex.jcsb
+                - if campaign.donations.present?
+                  - campaign.donations.each do |donation|
+                    .orange
+                      h4 #{((donation.amount/campaign.price) * 100).round(0)}%
+                - else
+                  h4.orange
+                    |0%
+                h4.orange
+                  = link_to "EDITAR", edit_admin_campaign_path(campaign), class: "btn-warning btn-lg"
+                h4.orange
+                  = link_to "DELETAR", admin_campaign_path(campaign), method: :delete, data: { confirm: "Tem certeza?" }, class: "btn-warning btn-lg"

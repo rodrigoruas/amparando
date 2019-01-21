@@ -8,9 +8,9 @@
         .navbar-wagon-right.visible-xs.visible-sm
           .navbar-inline
         .navbar-wagon-right.hidden-xs.hidden-sm
-          = link_to "Quem Somos", '/blog', class: "navbar-wagon-item navbar-wagon-link"
+          = link_to "Quem Somos",about_path, class: "navbar-wagon-item navbar-wagon-link"
           = link_to "Quero Ajudar", '/blog', class: "navbar-wagon-item navbar-wagon-link"
-          = link_to "Campanhas", '/blog', class: "navbar-wagon-item navbar-wagon-link"
+          = link_to "Campanhas", campaigns_path, class: "navbar-wagon-item navbar-wagon-link"
           = link_to "Blog", '/blog', class: "navbar-wagon-item navbar-wagon-link"
           - if user_signed_in?
             .navbar-wagon-item.navbar-wagon-link.white
@@ -25,9 +25,9 @@
           .dropdown
             i.fas.fa-bars.fa-2x.dropdown-toggle[data-toggle="dropdown"]
             ul.dropdown-menu.dropdown-menu-right.navbar-wagon-dropdown-menu
-              li= link_to "Quem Somos", '/blog', class: "navbar-wagon-item navbar-wagon-link"
+              li= link_to "Quem Somos", about_path, class: "navbar-wagon-item navbar-wagon-link"
               li= link_to "Quero Ajudar", '/blog', class: "navbar-wagon-item navbar-wagon-link"
-              li= link_to "Campanhas", '/blog', class: "navbar-wagon-item navbar-wagon-link"
+              li= link_to "Campanhas", campaigns_path, class: "navbar-wagon-item navbar-wagon-link"
               li= link_to "Blog", '/blog', class: "navbar-wagon-item navbar-wagon-link"
               - if user_signed_in?
                 li= link_to "Logout", destroy_user_session_path, class: "navbar-wagon-item navbar-wagon-link"

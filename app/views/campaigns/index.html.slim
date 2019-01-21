@@ -1,0 +1,25 @@
+.container
+  .row.pad-lg
+    - @campaigns.each do |campaign|
+      .col-sm-12
+        .card.mar-top-md.pad-sm.border-green.sld.bg-gray
+          .row
+            .col-xs-3
+              = image_tag ( "https://res.cloudinary.com/dib2nyadi/image/upload/c_scale,h_150/v1544719851/Amparando/child.jpg"), class: "semi-rounded mar-top-md"
+            .col-xs-9
+              .green.flex.jcsb
+                h3
+                  = campaign.title
+                h3
+                  = humanized_money_with_symbol(campaign.price)
+              == campaign.description
+              .mar-top-md.flex.jcsb
+                - if campaign.donations.present?
+                  - campaign.donations.each do |donation|
+                    .orange
+                      h4 #{((donation.amount/campaign.price) * 100).round(0)}%
+                h4.orange
+                = link_to "DOE AGORA", campaigns_path(@campaign), class: "btn-warning btn-lg"
+
+
+
