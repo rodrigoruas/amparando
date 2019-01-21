@@ -12,7 +12,13 @@
           = link_to "Quero Ajudar", '/blog', class: "navbar-wagon-item navbar-wagon-link"
           = link_to "Campanhas", '/blog', class: "navbar-wagon-item navbar-wagon-link"
           = link_to "Blog", '/blog', class: "navbar-wagon-item navbar-wagon-link"
-          = link_to "Login", '/blog', class: "navbar-wagon-item navbar-wagon-link"
+          - if user_signed_in?
+            .navbar-wagon-item.navbar-wagon-link.white
+              = "Bem vindo, #{current_user.first_name}"
+            = link_to destroy_user_session_path, method: :delete do
+              .navbar-wagon-item.navbar-wagon-link Logout
+          - else
+            = link_to "Login", new_user_session_path, class: "navbar-wagon-item navbar-wagon-link"
           a.btn-warning.btn-orange.btn-lg.btn-navbar.text-center.pad-left-sm.pad-right-sm data-turbolinks="false" href="#instant-booking" DOE AGORA
 
         .navbar-wagon-item.hidden-md.hidden-lg
@@ -23,4 +29,7 @@
               li= link_to "Quero Ajudar", '/blog', class: "navbar-wagon-item navbar-wagon-link"
               li= link_to "Campanhas", '/blog', class: "navbar-wagon-item navbar-wagon-link"
               li= link_to "Blog", '/blog', class: "navbar-wagon-item navbar-wagon-link"
-              li= link_to "Login", '/blog', class: "navbar-wagon-item navbar-wagon-link"
+              - if user_signed_in?
+                li= link_to "Logout", destroy_user_session_path, class: "navbar-wagon-item navbar-wagon-link"
+              - else
+                 li= link_to "Login", new_user_session_path, class: "navbar-wagon-item navbar-wagon-link"
