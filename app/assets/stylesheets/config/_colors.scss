@@ -20,6 +20,7 @@ $colors: (
   purple: $purple,
   black: $black,
   white: $white,
+  gray: $light-gray,
 );
 
 // Text Colors
@@ -32,5 +33,13 @@ $colors: (
 @each $color-id, $color in $colors {
   .bg-#{"" + $color-id} {
     background: $color;
+  }
+}
+
+// Border Colors
+
+@each $color-id, $color in $colors {
+  .border-#{"" + $color-id} {
+    border-color: $color;
   }
 }

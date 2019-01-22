@@ -1,0 +1,22 @@
+.container.mar-top-lg
+  .row
+    .col-xs-12.col-md-3
+      nav.side-menu data-spy="affix"
+        ul.nav
+          li
+            a href='#info-bas' data-turbolinks='false' Informações Básicas
+          li
+            a href='#photos' data-turbolinks='false' Fotos
+
+    .col-xs-12.col-md-9.form-horizontal
+      = simple_form_for [:admin, @campaign], wrapper: :horizontal_form do |f|
+        .panel.panel-default
+          .panel-heading#info-bas
+            h4 Criar Campanha
+          .panel-body
+            = f.input :title, maxlength: 55, char_counter: true
+            = f.input :description, as: :trix_editor, input_html: { class: 'simple-editor', rows: 100 }
+            = f.input :price
+            = f.input :photo, label: "Foto"
+            = f.input :photo_cache, as: :hidden
+            = f.button :submit, 'Salvar', class: 'btn btn-primary'
