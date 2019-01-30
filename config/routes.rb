@@ -2,10 +2,15 @@ Rails.application.routes.draw do
   root to: 'pages#home'
   get "/sobre-nos", to: 'pages#about', as: :about
 
-  resources :campaigns, only: :index
+  resources :campaigns, only: [:index, :show] do
+    resources :donations, only: [:new, :create, :show] do
+      resources :payments, only: [:new, :create]
+    end
+  end
 
   namespace :admin do
     resources :campaigns
+    # resources :donations
   end
 
   devise_for :users do
