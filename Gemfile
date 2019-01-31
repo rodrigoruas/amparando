@@ -29,6 +29,7 @@ gem 'dotenv-rails', groups: [:development, :test]
 gem 'cloudinary', '~> 1.9.1'
 gem 'carrierwave', '~> 1.2'
 gem 'trix'
+gem "pagseguro-oficial", "~> 2.5.0"
 
 group :development, :test do
   gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]
