@@ -1,6 +1,7 @@
 Rails.application.routes.draw do
   root to: 'pages#home'
   get "/sobre-nos", to: 'pages#about', as: :about
+  get "/confirmed", to: 'pages#confirmed', as: :confirmed
 
   resources :campaigns, only: [:index, :show] do
     resources :donations, only: [:new, :create, :show] do
@@ -10,7 +11,7 @@ Rails.application.routes.draw do
 
   namespace :admin do
     resources :campaigns
-    # resources :donations
+    resources :users, only: [:show]
   end
 
   devise_for :users do
