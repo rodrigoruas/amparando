@@ -1,11 +1,22 @@
 .container.mar-top-lg
   .row
-    .col-xs-12.col-md-9.form-horizontal
-      = simple_form_for [@campaign, @donation], wrapper: :horizontal_form do |f|
-        .panel.panel-default
-          .panel-heading#info-bas
-            h4 Criar Campanha
-          .panel-body
-            = f.input :amount
-            = f.input :campaign_id
-            = f.button :submit, 'Salvar', class: 'btn btn-primary'
+    .col-xs-12.col-md-8.col-md-offset-2.form-horizontal
+      h4 Confirme sua Doação.
+      p O Pagamento é feito através do PagSeguro.
+      p Você será redirecionado para fazer o pagamento
+      .panel.panel-default
+        .panel-heading#info-bas
+          .flex.jcsb
+            h4
+              = "Campanha: #{@campaign.title}"
+            h4
+              = "Meta: #{humanized_money_with_symbol(@campaign.price)}"
+
+        .panel-body
+          .row
+            .col-xs-12.col-sm-6
+              = simple_form_for [@campaign, @donation], wrapper: :horizontal_form do |f|
+                = f.input :amount, label: "Quero Doar"
+                = f.input :campaign_id, as: :hidden, :input_html => { :value => "#{@campaign.id}" }
+                = f.input :user_id, as: :hidden, :input_html => { :value => "#{current_user.id}" }
+                = f.button :submit, 'PAGAR', class: 'btn-warning btn-lg'

@@ -8,13 +8,13 @@ class DonationsController < ApplicationController
 
   def show
     @donation = Donation.find(params[:id])
+    @campaign = Campaign.find(params[:campaign_id])
   end
 
   def create
     @campaign = Campaign.find(params[:campaign_id])
     @donation = Donation.new(donation_params)
     if @donation.save
-      byebug
       redirect_to campaign_donation_path(@campaign, @donation)
     else
       render "new"

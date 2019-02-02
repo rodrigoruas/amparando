@@ -10,12 +10,13 @@
               h3
                 = @campaign.title
               h3
-                = humanized_money_with_symbol(@campaign.price)
+                = " #{@donation_percentage}% de #{humanized_money_with_symbol(@campaign.price)}"
             == @campaign.description
             .mar-top-md.flex.jcsb
               - if @campaign.donations.present?
-                - @campaign.donations.each do |donation|
-                  .orange
-                    h4 #{((donation.amount/@campaign.price) * 100).round(0)}%
+                .orange
+                  h4
+                    = "Total Arrecadado: #{humanized_money_with_symbol(@donation_total)}"
+
               h4.orange
               = link_to "DOE AGORA", new_campaign_donation_path(@campaign), class: "btn-warning btn-lg"

@@ -1,0 +1,59 @@
+.container
+  .row.pad-lg
+    .col-sm-12
+      .card.mar-top-md.pad-sm.border-green.sld.bg-gray
+        .row
+          .col-xs-3
+            = image_tag ( "https://res.cloudinary.com/dib2nyadi/image/upload/c_scale,h_150/v1544719851/Amparando/child.jpg"), class: "semi-rounded mar-top-md"
+          .col-xs-9
+            .green.flex.jcsb
+              h3
+                = @campaign.title
+              h3
+                = " #{@donation_percentage}% de #{humanized_money_with_symbol(@campaign.price)}"
+            == @campaign.description
+            .mar-top-md.flex.jcsb
+              - if @campaign.donations.present?
+                .orange
+                  h4
+                    = "Total Arrecadado: #{humanized_money_with_symbol(@donation_total)}"
+
+              h4.orange
+                = link_to "EDITAR", edit_admin_campaign_path(@campaign), class: "btn-warning btn-lg"
+              h4.orange
+                = link_to "DELETAR", admin_campaign_path(@campaign), method: :delete, data: { confirm: "Tem certeza?" }, class: "btn-warning btn-lg"
+  .row.pad-lg
+
+    table.table.table-stripped
+      thead
+        tr
+          th scope="col"
+            |Código
+          th scope="col"
+            |Nome
+          th scope="col"
+            |e-mail
+          th scope="col"
+            |Valor Doado
+          th scope ="col"
+            |Código PagSeguro
+          th scope ="col"
+            |Dados do Usuario
+      tbody
+        - @campaign.donations.each do |donation|
+          tr
+            th scope="row"
+              = donation.id
+            th scope="row"
+              = "#{donation.user.first_name} #{donation.user.last_name} "
+            th scope="row"
+              = donation.user.email
+            th scope="row"
+              = humanized_money_with_symbol(donation.amount)
+            th scope="row"
+              = donation.transaction_id
+            th scope="row"
+              = link_to "VER", admin_user_path(current_user), class: ""
+
+
+
