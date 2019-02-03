@@ -14,7 +14,11 @@ class PaymentsController < ApplicationController
 
       # payment.reference = order.id
       # payment.notification_url = "http://2216ca24.ngrok.io"
-      payment.redirect_url = "https://e560783e.ngrok.io/confirmed"
+      if Rails.env.production?
+        payment.redirect_url = "http://amparando.herokuapp.com/confirmed"
+      else
+        payment.redirect_url = "localhost:3000/confirmed"
+      end
 
         payment.items << {
           id: @donation.id,
