@@ -1,21 +1,11 @@
 // Import Google fonts
 @import url("https://fonts.googleapis.com/css?family=Roboto:400,500,700");
 @import url("https://fonts.googleapis.com/css?family=Nunito");
+@import url('https://fonts.googleapis.com/css?family=Roboto+Condensed');
 // Define fonts for body and headers
-$base-font: "Roboto", "sans-serif";
-$header-font: "Roboto", "sans-serif";
+$base-font: "Roboto Condensed", "sans-serif";
+$header-font: "Roboto Condensed", "sans-serif";
 
-// To use a font file (.woff) uncomment following lines
-// @font-face {
-//   font-family: "Font Name";
-//   src: font-url('FontFile.eot');
-//   src: font-url('FontFile.eot?#iefix') format('embedded-opentype'),
-//        font-url('FontFile.woff') format('woff'),
-//        font-url('FontFile.ttf') format('truetype')
-// }
-// $my-font: "Font Name";
-
-// Font-size and line-height
 $small-size: 14px;
 $base-size: 17px;
 $medium-size: 19px;
@@ -27,6 +17,10 @@ $font-light: 300;
 
 .lh-double {
   line-height: 2.0;
+}
+
+p {
+  font-size: $base-size;
 }
 
 // Text Alignment

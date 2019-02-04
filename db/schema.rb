@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20190202175111) do
+ActiveRecord::Schema.define(version: 20190203193918) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -31,7 +31,7 @@ ActiveRecord::Schema.define(version: 20190202175111) do
     t.integer "amount_cents", default: 0, null: false
     t.bigint "campaign_id"
     t.bigint "user_id"
-    t.boolean "paid", default: false
+    t.string "state", default: "false"
     t.string "transaction_id"
     t.index ["campaign_id"], name: "index_donations_on_campaign_id"
     t.index ["user_id"], name: "index_donations_on_user_id"

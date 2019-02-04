@@ -1,7 +1,8 @@
 Rails.application.routes.draw do
   root to: 'pages#home'
   get "/sobre-nos", to: 'pages#about', as: :about
-  get "/confirmed", to: 'pages#confirmed', as: :confirmed
+  get "/pagamento", to: 'payments#pagseguro', as: :pagseguro
+  get "/quero-ajudar", to: 'pages#help', as: :help
 
   resources :campaigns, only: [:index, :show] do
     resources :donations, only: [:new, :create, :show] do

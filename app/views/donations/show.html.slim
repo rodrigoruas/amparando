@@ -1,6 +1,26 @@
-= @donation.amount
-h4.orange
+.container
+  .row.pad-lg
+    .col-xs-12
+      .card.mar-top-md.pad-sm.bg-gray
+        .pad-md
+          h4
+            = "#{current_user.first_name}, Confirme Sua Doação"
+          p
+            | Você será redirecionado para o PagSeguro, onde realizará sua doação com segurança.
+          ul.list-group.mar-top-md
 
-  = link_to "CONFIRMAR", campaign_donation_payments_path(@campaign, @donation, amount: @donation.amount), method: :post, class: "btn-warning btn-lg"
+            li.list-group-item
+              h4
+                = "Campanha: #{@donation.campaign.title}"
+            li.list-group-item
+              h4
+                = "Valor Doado: #{humanized_money_with_symbol(@donation.amount)}"
+          .row
+            .col-xs-12.col-sm-6.pad-sm
+              = link_to "Alterar Valor",campaign_path(@campaign), class: "btn-warning btn-lg"
+            .col-xs-12.col-sm-6.pad-sm
+              = link_to "CONFIRMAR", campaign_donation_payments_path(@campaign, @donation, amount: @donation.amount), method: :post, class: "btn-success btn-lg"
+
+
 
 
