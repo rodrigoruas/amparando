@@ -1,4 +1,5 @@
 class CampaignsController < ApplicationController
+  before_action :authenticate_user!, only: :show
   def index
     @campaigns = Campaign.all
   end
