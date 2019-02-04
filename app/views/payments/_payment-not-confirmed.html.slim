@@ -1,0 +1,23 @@
+.container
+  .row.pad-lg
+    .col-sm-12
+      .card.mar-top-md.pad-sm.border-green.sld.bg-gray
+        .pad-md
+          h4
+            = "#{current_user.first_name}, seu pagamento não foi confirmado"
+          h3
+            = "Tente novamente o pagamento ou entre em contato conosco"
+          ul.list-group
+
+            li.list-group-item.flex.jcsb
+              h4
+                = "Campanha:"
+              h4
+                = @donation.campaign.title
+            li.list-group-item.flex.jcsb
+              h4
+                = "Motivo:"
+              h4
+                = @donation.state
+
+          = link_to "VOLTAR PARA HOME",root_path, class: "btn-warning btn-lg"

@@ -3,15 +3,14 @@
     .container
       .navbar-wagon
         = link_to root_path, class: "navbar-wagon-brand" do
-          = image_tag('logo-new.jpg', height: 35)
+          = cl_image_tag("Amparando/logo_horizontal_preto_2.png", height: 70)
 
         .navbar-wagon-right.visible-xs.visible-sm
           .navbar-inline
         .navbar-wagon-right.hidden-xs.hidden-sm
           = link_to "Quem Somos",about_path, class: "navbar-wagon-item navbar-wagon-link"
-          = link_to "Quero Ajudar", '/blog', class: "navbar-wagon-item navbar-wagon-link"
+          = link_to "Quero Ajudar", help_path, class: "navbar-wagon-item navbar-wagon-link"
           = link_to "Campanhas", campaigns_path, class: "navbar-wagon-item navbar-wagon-link"
-          = link_to "Blog", '/blog', class: "navbar-wagon-item navbar-wagon-link"
           - if user_signed_in?
             .navbar-wagon-item.navbar-wagon-link.white
               = "Bem vindo, #{current_user.first_name}"
@@ -19,16 +18,15 @@
               .navbar-wagon-item.navbar-wagon-link Logout
           - else
             = link_to "Login", new_user_session_path, class: "navbar-wagon-item navbar-wagon-link"
-          a.btn-warning.btn-orange.btn-lg.btn-navbar.text-center.pad-left-sm.pad-right-sm data-turbolinks="false" href="#instant-booking" DOE AGORA
+          a.btn-warning.btn-orange.btn-lg.btn-navbar.text-center.pad-left-sm.pad-right-sm data-turbolinks="false" href="#instant-booking" Quero Doar
 
         .navbar-wagon-item.hidden-md.hidden-lg
           .dropdown
             i.fas.fa-bars.fa-2x.dropdown-toggle[data-toggle="dropdown"]
             ul.dropdown-menu.dropdown-menu-right.navbar-wagon-dropdown-menu
               li= link_to "Quem Somos", about_path, class: "navbar-wagon-item navbar-wagon-link"
-              li= link_to "Quero Ajudar", '/blog', class: "navbar-wagon-item navbar-wagon-link"
+              li= link_to "Quero Ajudar", help_path, class: "navbar-wagon-item navbar-wagon-link"
               li= link_to "Campanhas", campaigns_path, class: "navbar-wagon-item navbar-wagon-link"
-              li= link_to "Blog", '/blog', class: "navbar-wagon-item navbar-wagon-link"
               - if user_signed_in?
                 li= link_to "Logout", destroy_user_session_path, class: "navbar-wagon-item navbar-wagon-link"
               - else

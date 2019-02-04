@@ -1,35 +1,37 @@
 .container
   .row.pad-lg
-    h2.pad-sm
-      |Campanhas Ativas
-    h4.pad-sm
-      |Veja abaixo nossas campanhas abertas para doação!
-    p.pad-sm
-      |Precisamos cumprir as metas para conseguir continuar com o nosso trabalho. Nos ajude!
-    - @campaigns.each do |campaign|
-      .col-sm-12
-        .card.mar-top-md.pad-sm.border-green.sld.bg-gray
-          .row
-            .col-xs-3
-              = image_tag ( "#{campaign.photo}"), class: "semi-rounded mar-top-md card-img"
-            .col-xs-9
-              .green.flex.jcsb
-                h3
-                  = campaign.title
-                h3
-                  = "#{humanized_money_with_symbol(campaign.price)}"
-              p
-                = campaign.short_description
-              .mar-top-md.flex.jcsb
-                .orange
-                  h4
-                    - if campaign.donations.present?
-                      = "Total Arrecadado: #{humanized_money_with_symbol(campaign.donations.inject(0){|sum,e| sum + e.amount })}"
-                    - else
-                       = "Total Arrecadado: 0"
+    .col-xs-12
+      h2.pad-sm
+        |Campanhas Ativas
+      h4.pad-sm
+        |Veja abaixo nossas campanhas abertas para doação!
+      p.pad-sm
+        |Precisamos cumprir as metas para conseguir continuar com o nosso trabalho. Nos ajude!
+      - @campaigns.each do |campaign|
+        .row
+          .col-xs-12
+            .card.mar-top-md.pad-sm.border-green.sld.bg-gray
+              .row
+                .col-xs-12.col-md-3
+                  = image_tag ( "#{campaign.photo}"), class: "semi-rounded mar-top-md card-img"
+                .col-xs-12.col-md-9
+                  .green.flex.jcsb
+                    h3
+                      = campaign.title
+                    h3
+                      = "#{humanized_money_with_symbol(campaign.price)}"
+                  p
+                    = campaign.short_description
+                  .mar-top-md.flex.jcsb
+                    .orange
+                      h4
+                        - if campaign.donations.present?
+                          = "Total Arrecadado: #{humanized_money_with_symbol(campaign.donations.inject(0){|sum,e| sum + e.amount })}"
+                        - else
+                           = "Total Arrecadado: 0"
 
-                h4.orange
-                = link_to "SAIBA MAIS", campaign_path(campaign), class: "btn-warning btn-lg"
+                    h4.orange
+                    = link_to "SAIBA MAIS", campaign_path(campaign), class: "btn-warning btn-lg"
 
 
 
