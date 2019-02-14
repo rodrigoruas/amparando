@@ -13,11 +13,11 @@
   }
 }
 
-// Button Sizes
-// .btn-xs { font-size: $small-size; }
-// .btn-sm { font-size: $base-size; }
-// .btn-md { font-size: $medium-size; }
-// .btn-lg { font-size: $big-size; }
+Button Sizes
+.btn-xs { font-size: $small-size; }
+.btn-sm { font-size: $base-size; }
+.btn-md { font-size: $medium-size; }
+.btn-lg { font-size: $big-size; }
 
 
 
@@ -35,10 +35,13 @@
   font-weight: 500;
 }
 
-.btn-warning.btn-orange {
+.btn-warning{
   background-color: $orange;
   &:hover {
     opacity:0.8;
+  }
+  & a:hover {
+    text-decoration: none;
   }
 }
 
