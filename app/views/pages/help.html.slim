@@ -1,3 +1,105 @@
 .container
+  .row.mar-top-md
+    .col-xs-12.tac
+      h3 Há diversas formas de você nos ajudar a construir um mundo melhor para a Família Amparando !
+      h3.red
+        |Encontre as opções que + se adequam mais ao que você busca realizar:
+  .row.mar-top-lg
+    .col-xs-12.col-md-4
+      h4.tac Ser Voluntário (a)
+      p Você pode nos ajudar a construir um mundo melhor para a Família Amparando !
+    .col-xs-12.col-md-4
+      h4.tac Apadrinhar a Instituição
+      p.taj
+        |O apadrinhamento é uma forma de ajudar financeiramente o nosso trabalho. Todos os recursos arrecadados são utilizados de acordo com as necessidades das atividades, das famílias e crianças assistidas.
+    .col-xs-12.col-md-4
+      h4.tac Doação pontual
+      p.taj
+        |A sua doação em dinheiro é essencial para o nosso trabalho, principalmente quando ela é financeira. Estes recursos nos ajudam a complementar a verba para o funcionamento do Instituto.
+  .row.mar-top-sm
+    .col-xs-12.col-md-4
+      h3.pad-sm.white.bg-orange.semi-rounded.lh-double.tac
+        |Quero ser voluntário(a) da Família Amparando
+    .col-xs-12.col-md-4
+      h3.pad-sm.white.bg-red.semi-rounded.lh-double.tac
+        |Quero apadrinhar a Família Amparando
+    .col-xs-12.col-md-4
+      h3.pad-sm.white.bg-red.semi-rounded.lh-double.tac
+        |Quero doar uma quantia em dinheiro
+
+  .row.mar-top-md#quero-voluntario
+    .col-xs-12.tac
+      h2.red Ser voluntário (a) da Família Amparando
+    .col-xs-12.col-md-6.mar-top-md
+      p.taj
+        |Ser voluntário é quando você decide doar seu tempo e amor para ajudar alguém. Nossos voluntários são pessoas que, acima de tudo, acreditam no trabalho humanitário à parte de vínculos religiosos e realizado com qualidade e acompanhamento diário pelos responsáveis pela Instituição..
+      p.taj.mar-top-sm
+        strong
+          |No Instituto Amparando você pode atuar de 2 maneiras:
+      p.taj.mar-top-sm
+        strong
+          |VOLUNTÁRIO FIXO:
+        |  Atividade administrativa, Sala de aula ou oferecer serviços fixos em algo que você tenha expertise
+      p.taj.mar-top-sm
+        strong
+          |VOLUNTÁRIO PONTUAL:
+        |  Eventos, passeios
+    .col-xs-12.col-md-6.tac
+      = image_tag ( "https://res.cloudinary.com/dib2nyadi/image/upload/v1544719851/Amparando/child.jpg"), class: "semi-rounded mar-top-md", style: "width: 65%"
+  .row.mar-top-sm
+    .col-xs-12.col-md-6
+      h4.pad-sm.white.bg-dark-gray.semi-rounded.lh-double.tac
+        em
+          |"A melhor experiencia da minha vida. Tive a certeza que causei um grande impacto na vida das crianças."
+        p Joao da Silva
+    .col-xs-12.col-md-6.tac.pad-lg
+      button.btn-warning.btn-lg.white.semi-rounded
+        = link_to "Quero Ser Voluntário(a)",root_path, class: "white"
+  .row.mar-top-md#apadrinhar
+    .col-xs-12.col-md-10.col-md-offset-1
+      h2.red.tac
+        |Apadrinhar a Família Amparando
+      .taj.mar-top-md
+        p
+          |Ao apadrinhar mensalmente você ajuda a nos organizar financeiramente para exercer todo o trabalho e poder atender a todos.
+        p
+          |Com a sua contribuição, poderemos: comprar alimentos e cesta básica, materiais para atividades, itens para atendimento às famílias e crianças, realizar pagamento de colaboradores fixos, comprar itens de higiene, presentes em datas comemorativas e cobrir demais serviços burocráticos necessários para nosso funcionamento. 
+        p
+          |O apadrinhamento é realizado mensalmente a partir de R$50,00, e pode ser realizado via boleto bancário, débito automático em conta ou Cartão de crédito, tudo com segurança.
+        p
+          |Como padrinho/madrinha da Família Amparando, você receberá relatórios e informativos das atividades que estamos realizando e poderá nos ajudar ainda mais ativamente nas campanhas.
   .row
-    h4 Descubra aqui como ajudar a Amparando
+    .col-xs-12.tac.pad-md
+      button.btn-warning.btn-lg.white.semi-rounded
+        = link_to "Quero Apadrinhar Agora",root_path, class: "white"
+  .row.mar-top-md#doar-dinheiro
+    .col-xs-12.tac
+      h2.red Quero ajudar pontualmente com dinheiro
+  .row.mar-top-lg
+    .col-xs-12.col-md-4.bg-gray
+      h2.green.tac
+        strong
+          |R$ 10,00
+      p.taj
+        |Ajuda com tintas, pincéis, papéis, entre outros recursos que necessitam de constante reposição nas atividades.
+      .tac.pad-md
+        button.btn-warning.btn-lg.white.semi-rounded
+          = link_to "FAZER DOAÇÃO",root_path, class: "white"
+    .col-xs-12.col-md-4.bg-gray
+      h2.green.tac
+        strong
+          |R$ 25,00
+      p.taj
+        |Ajuda com diversos alimentos, bebidas e materiais de grande uso imediato no dia a dia do Instituto Amparando
+      .tac.pad-md
+        button.btn-warning.btn-lg.white.semi-rounded
+          = link_to "FAZER DOAÇÃO",root_path, class: "white"
+    .col-xs-12.col-md-4.bg-gray
+      h2.green.tac
+        strong
+          |R$ 100,00
+      p.taj
+        |Ajuda a cobrir os custos de passeios, atividades e outras necessidades emergenciais do dia a dia do Instituto
+      .tac.pad-md
+        button.btn-warning.btn-lg.white.semi-rounded
+          = link_to "FAZER DOAÇÃO",root_path, class: "white"
