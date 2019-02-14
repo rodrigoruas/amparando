@@ -1,4 +1,7 @@
-- if @donation.state == "3"
-  = render "payment-confirmed"
-- else
+- if @donation.nil?
   = render "payment-not-confirmed"
+- else
+  - if @donation.state == "3"
+    = render "payment-confirmed"
+  - else
+    = render "payment-not-confirmed"

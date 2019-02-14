@@ -28,12 +28,19 @@ class PaymentsController < ApplicationController
 
 
   def pagseguro
-    if params.has_key?(:transaction_id)
+    if Rails.env.production?
+      if params.has_key?(:transaction_id)
+        @donation = Donation.where("user_id = #{current_user.id}").last
+        transaction_id = (params[:transaction_id])
+        @json = payment_json(transaction_id)
+        @donation.transaction_id = transaction_id
+        @donation.state = @json["transaction"]["status"]
+        @donation.save
+      end
+    else
       @donation = Donation.where("user_id = #{current_user.id}").last
-      transaction_id = (params[:transaction_id])
-      @json = payment_json(transaction_id)
-      @donation.transaction_id = transaction_id
-      @donation.state = @json["transaction"]["status"]
+      @donation.transaction_id = "TESTE-123-123-123"
+      @donation.state = "3"
       @donation.save
     end
   end
