@@ -1,7 +1,7 @@
 .container
   .row
     .col-sm-12.col-md-6.mar-top-md
-      .banner.banner-four-fifties style="background-image:url('https://res.cloudinary.com/dib2nyadi/image/upload/v1544719851/Amparando/child.jpg')"
+      .banner.banner-four-fifties style="background-image:url('https://res.cloudinary.com/dib2nyadi/image/upload/v1550433119/Amparando/7.jpg')"
     .col-sm-12.col-md-6.taj
       h3.bg-purple.white.pad-sm.tac
         | Seja da Família Amparando
@@ -10,27 +10,11 @@
 
       p.pad-sm
         |Somos Instituição filantrópica, sem fins lucrativos, fundada por Roberta Azevedo, assistente social e professora de educação infantil. Contamos com a colaboração de voluntários de diversas áreas.
-
-      .btn-black.black.mar-top-md.text-center data-turbolinks="false" href="#instant-booking"
-        h4
-          |QUERO
-          b  APADRINHAR
-          |  O INSTITUTO!
-
-      .btn-black.black.mar-top-md.text-center data-turbolinks="false" href="#instant-booking"
-        h4
-          |QUERO DOAR
-          b  PONTUALMENTE
-          |  PARA O INSTITUTO!
-
-      .btn-black.black.mar-top-md.text-center data-turbolinks="false" href="#instant-booking"
-        h4
-          |QUERO SER
-          b  VOLUNTÁRIO
-          |  DO INSTITUTO!
-
-      .btn-black.black.mar-top-md.text-center data-turbolinks="false" href="#instant-booking"
-        h4
-          |QUERO VINCULAR
-          b  MINHA EMPRESA
-          |  AO INSTITUTO!
+      button.btn-black.black.mar-top-md.tac.pad-sm
+        = link_to "QUERO APADRINHAR O INSTITUTO","#{root_path}quero-ajudar#apadrinhar", class: "black h4"
+      button.btn-black.black.mar-top-md.tac.pad-sm
+        = link_to "QUERO DOAR PONTUALMENTE PARA O INSTITUTO","#{root_path}quero-ajudar#doar-dinheiro", class: "black h4"
+      button.btn-black.black.mar-top-md.tac.pad-sm
+        = link_to "QUERO SER VOLUNTÁRIO DO INSTITUTO","#{root_path}quero-ajudar#voluntario", class: "black h4"
+      button.btn-black.black.mar-top-md.tac.pad-sm
+        = link_to "QUERO VINCULAR MINHA EMPRESA AO INSTITUTO","#{root_path}quero-ajudar#empresa", class: "black h4"
