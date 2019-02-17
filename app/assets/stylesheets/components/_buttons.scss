@@ -36,7 +36,19 @@ Button Sizes
 }
 
 .btn-warning{
+  border-radius: 10px;
   background-color: $orange;
+  &:hover {
+    opacity:0.8;
+  }
+  & a:hover {
+    text-decoration: none;
+  }
+}
+
+.btn-purple {
+  border-radius: 10px;
+  background-color: $purple;
   &:hover {
     opacity:0.8;
   }
@@ -54,14 +66,26 @@ Button Sizes
 }
 
 .btn-red {
-  font-size: $font-size-h4;
-  text-shadow: 0px 1px rgba(0, 0, 0, 0.25);
-  color: $red;
-  font-weight: 100;
-  background: transparent;
-  border: $red solid 2px;
-  padding-top: 5px;
-  padding-bottom: 5px;
+  border-radius: 10px;
+  background-color: $red;
+  &:hover {
+    opacity:0.8;
+  }
+  & a:hover {
+    text-decoration: none;
+  }
+}
+
+
+.btn-orange {
+  border-radius: 10px;
+  background-color: $orange;
+  &:hover {
+    opacity:0.8;
+  }
+  & a:hover {
+    text-decoration: none;
+  }
 }
 
 .btn-black {
