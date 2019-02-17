@@ -1,24 +1,35 @@
-.banner.banner-full style="background-image: url('https://res.cloudinary.com/dib2nyadi/image/upload/c_scale,w_1500/v1544719855/Amparando/banner-img-3.jpg')"
-  .container
-    .row
-      .col-sm-12.col-md-6.col-md-offset-3
-        .bg-white.tal.pad-sm
-          = simple_form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f|
-            = f.error_notification
-            .row.pad-sm
-              = f.input :first_name, required: true, autofocus: true, label: "Nome", :input_html => {:class => " col-xs-9"}, :label_html => {:class => "col-xs-3 green"}
-              .row.pad-sm
-              = f.input :last_name, required: true, autofocus: true, label: "Sobrenome", :input_html => {:class => " col-xs-9"}, :label_html => {:class => "col-xs-3 green"}
-              .row.pad-sm
-              = f.input :phone, required: false, autofocus: true, label: "Telefone", :input_html => {:class => " col-xs-9"}, :label_html => {:class => "col-xs-3 green"}
-            .row.pad-sm
-              = f.input :email, required: true, autofocus: true, label: "E-mail", :input_html => {:class => " col-xs-9"}, :label_html => {:class => "col-xs-3 green"}
-            .row.pad-sm
-              = f.input :password, required: true, label: "Senha", :input_html => {:class => " col-xs-9"}, :label_html => {:class => "col-xs-3 green"}
-            .row.pad-sm
-              = f.input :password, required: true, label: "Senha", :input_html => {:class => " col-xs-9"}, :label_html => {:class => "col-xs-3 green"}
-            .row.pad-sm
-              = f.button :submit, "CADASTRE-SE", class: "btn-warning btn-orange btn-lg"
-              = link_to "Já tenho Conta",new_user_session_path, class: " green navbar-wagon-item navbar-wagon-link"
+.container.pad-md
+  .section-box
+    .bg-white.tal.pad-md
+      .row
+        h3.pad-sm Faça Seu Cadastro
+        p.pad-sm Faça parte da Família Amparando. Complete seus dados que entraremos em contato!
+      = simple_form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f|
+        = f.error_notification
+        .row
+          .col-xs-12.col-md-6
+            .row.pad-xs
+              = f.input :first_name, required: true, autofocus: true, label: "Nome", :input_html => {}, :label_html => {:class => "green"}
+              .row.pad-xs
+              = f.input :city, required: true, autofocus: true, label: "Cidade", :input_html => {}, :label_html => {:class => "green"}
+              .row.pad-xs
+              = f.input :phone, required: false, autofocus: true, label: "Telefone", :input_html => {}, :label_html => {:class => "green"}
+            .row.pad-xs
+              = f.input :password, required: true, label: "Cria sua Senha", :input_html => {}, :label_html => {:class => "green"}
+          .col-xs-12.col-md-6
+            .row.pad-xs
+              = f.input :last_name, required: true, autofocus: true, label: "Sobrenome", :input_html => {}, :label_html => {:class => "green"}
+            .row.pad-xs
+              = f.input :state, required: true, autofocus: true, label: "Estado", :input_html => {}, :label_html => {:class => "green"}
+            .row.pad-xs
+              = f.input :email, required: true, label: "E-mail", :input_html => {}, :label_html => {:class => "green"}
+            .row.pad-xs
+              = f.input :password, required: true, label: "Confirme sua Senha", :input_html => {}, :label_html => {:class => "green"}
+        .row
+          .col-xs-12.tac
+            p Nos conta um pouco sobre você. Como pode ajudar a Amparando?
+            = f.input :observation, required: true, label: false, as: :text, :input_html => {}, :label_html => {:class => "green", rows: 5}
+            = f.button :submit, "CADASTRE-SE", class: "btn-warning btn-orange btn-lg"
+            = link_to "Já tenho Conta",new_user_session_path, class: " green navbar-wagon-item navbar-wagon-link"
 
 
