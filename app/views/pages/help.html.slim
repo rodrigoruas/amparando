@@ -49,21 +49,21 @@
         p.taj
           |O apadrinhamento  é uma forma de ajudar financeiramente os nossos projetos.
         button.btn-red.btn-lg.white.semi-rounded.mar-top-md
-          = link_to "Saiba Mais",root_path, class: "white", href: "#apadrinhar"
+          = link_to "Saiba Mais",new_user_registration_path, class: "white", href: "#apadrinhar"
     .col-sm-12.col-md-3.mar-top-sm
       .card.section-box.pad-sm
         h4.tac Doar pontualmente
         p.taj
           |A sua doação é fundamental o e os valores ajudam a manter todos os nossos projetos.
         button.btn-red.btn-lg.white.semi-rounded.mar-top-md
-          = link_to "Saiba Mais",root_path, class: "white", href: "#doar-dinheiro"
+          = link_to "Saiba Mais",new_user_registration_path, class: "white", href: "#doar-dinheiro"
     .col-sm-12.col-md-3.mar-top-sm
       .card.section-box.pad-sm
         h4.tac Empresa Parceira
         p.taj
           |Sua empresa pode se tornar um membro da Família Amparando e participar de todos os projetos
         button.btn-purple.btn-lg.white.semi-rounded.mar-top-md
-            = link_to "Saiba Mais",root_path, class: "white", href: "#empresa"
+            = link_to "Saiba Mais",new_user_registration_path, class: "white", href: "#empresa"
 
   .row.mar-top-md#voluntario
     .col-xs-12.tac
@@ -85,8 +85,8 @@
         strong
           |VOLUNTÁRIO PONTUAL:
         |  participa, eventualmente, de eventos, passeios e  ações.
-    .col-xs-12.col-md-6.tac
-      = image_tag ( "https://res.cloudinary.com/dib2nyadi/image/upload/v1544719851/Amparando/child.jpg"), class: "semi-rounded mar-top-md", style: "width: 65%"
+    .col-xs-12.col-md-6.tac.mar-top-md
+      .banner.banner-half style="background-image:url('https://res.cloudinary.com/dib2nyadi/image/upload/v1550433119/Amparando/7.jpg')"
   .row.mar-top-sm
     .col-xs-12.col-md-6
       h4.pad-sm.white.bg-dark-gray.semi-rounded.lh-double.tac
@@ -95,7 +95,7 @@
         p Natália Amorim
     .col-xs-12.col-md-6.tac.pad-lg
       button.btn-red.btn-lg.white.semi-rounded
-        = link_to "Quero Ser Voluntário(a)",root_path, class: "white"
+        = link_to "Quero Ser Voluntário(a)",new_user_registration_path, class: "white"
   .row.mar-top-md#apadrinhar
     .col-xs-12.col-md-12
       h2.red.tac
@@ -119,7 +119,7 @@
   .row
     .col-xs-12.tac.pad-md
       button.btn-red.btn-lg.white.semi-rounded
-        = link_to "Quero Apadrinhar Agora",root_path, class: "white"
+        = link_to "Quero Apadrinhar Agora",new_user_registration_path, class: "white"
   .row.mar-top-md#doar-dinheiro
     .col-xs-12.tac
       h2.red
@@ -133,7 +133,7 @@
         |Você ajuda a comprar alimentos, material de limpeza e higiene e outros itens fundamentais para o funcionamento do Instituto.
       .tac.pad-md
         button.btn-warning.btn-lg.white.semi-rounded
-          = link_to "FAZER DOAÇÃO",root_path, class: "white"
+          = link_to "FAZER DOAÇÃO",new_user_registration_path, class: "white"
     .col-xs-12.col-md-4.bg-gray
       h2.green.tac
         strong
@@ -142,7 +142,7 @@
         |Você ajuda a comprar tintas, pincéis, papéis, e outros recursos para as atividades educacionais e culturais do Insituto Amparando
       .tac.pad-md
         button.btn-warning.btn-lg.white.semi-rounded
-          = link_to "FAZER DOAÇÃO",root_path, class: "white"
+          = link_to "FAZER DOAÇÃO",new_user_registration_path, class: "white"
     .col-xs-12.col-md-4.bg-gray
       h2.green.tac
         strong
@@ -152,7 +152,7 @@
 
       .tac.pad-md
         button.btn-warning.btn-lg.white.semi-rounded
-          = link_to "FAZER DOAÇÃO",root_path, class: "white"
+          = link_to "FAZER DOAÇÃO",new_user_registration_path, class: "white"
   .row.mar-top-md#empresa
     .col-xs-12.tac
       h2.purple
@@ -170,7 +170,7 @@
     .row.mar-top-lg
       .col-xs-12.col-md-6.tac
         button.btn-purple.btn-lg.white.semi-rounded
-          = link_to "Minha Empresa Quer Ajudar",root_path, class: "white"
+          = link_to "Minha Empresa Quer Ajudar",new_user_registration_path, class: "white"
       .col-xs-12.col-md-6.tac
         button.btn-purple.btn-lg.white.semi-rounded
           = link_to "Quero ser profissional colaborador",root_path, class: "white"
@@ -198,4 +198,4 @@
     .row
       .col-xs-12.tac.pad-md
         button.btn-purple.btn-lg.white.semi-rounded
-          = link_to "Minha Empresa quer ajudar",root_path, class: "white"
+          = link_to "Minha Empresa quer ajudar",new_user_registration_path, class: "white"
