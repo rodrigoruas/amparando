@@ -12,10 +12,12 @@
 
   <body>
     <%= render "shared/navbar" %>
-    <% if notice || alert  %>
-      <p class="notice"><%= notice %></p>
-      <p class="alert"><%= alert %></p>
-    <% end %>
+    <%# if notice || alert  %>
+      <!-- <div class="bg-white green tac">
+        <p class="notice"><%= notice %></p>
+        <p class="alert"><%= alert %></p>
+      </div> -->
+    <%# end %>
     <%= yield %>
     <%= render "shared/footer" %>
   </body>
