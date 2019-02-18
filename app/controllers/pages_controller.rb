@@ -6,6 +6,7 @@ class PagesController < ApplicationController
   end
 
   def help
+    @unique_donation = UniqueDonation.new
   end
 
 end

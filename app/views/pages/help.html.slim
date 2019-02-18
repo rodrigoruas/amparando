@@ -6,35 +6,6 @@
       h3.red
         strong
           |Encontre as opções que mais se adequam mais ao que você busca realizar:
-  / .row.mar-top-lg
-  /   .col-xs-12.col-md-3
-  /     h4.tac Ser Voluntário (a)
-  /     p Você pode ser um voluntário(a) e ajudar a Família Amparando a construir um mundo melhor!
-  /   .col-xs-12.col-md-3
-  /     h4.tac Apadrinhar a Instituição
-  /     p.taj
-  /       |O apadrinhamento  é uma forma de ajudar financeiramente os nossos projetos.  Os recursos, doados mensalmente, são utilizados de acordo com as necessidades das atividades, das famílias e crianças assistidas.
-  /   .col-xs-12.col-md-3
-  /     h4.tac Doar pontualmente
-  /     p.taj
-  /       |A sua doação é fundamental para o nosso trabalho e os valores ajudam a manter os nossos projetos, a atender necessidades urgentes e implementar melhorias.
-  /   .col-xs-12.col-md-3
-  /     h4.tac Empresa Parceira
-  /     p.taj
-  /       |Sua empresa pode se tornar um membro da Família Amparando e participar do nosso sonho de construir um mundo melhor
-  / .row.mar-top-sm
-  /   .col-xs-12.col-md-3
-  /     button.btn-orange.btn-lg.white.semi-rounded
-  /       = link_to "Quero ser voluntário(a)","", class: "white"
-  /   .col-xs-12.col-md-3
-  /     button.btn-red.btn-lg.white.semi-rounded
-  /       = link_to "Quero apadrinhar a Família Amparando",root_path, class: "white"
-  /   .col-xs-12.col-md-3
-  /     button.btn-red.btn-lg.white.semi-rounded
-  /       = link_to "Quero doar uma quantia em dinheiro",root_path, class: "white"
-  /   .col-xs-12.col-md-3
-  /     button.btn-purple.btn-lg.white.semi-rounded
-  /       = link_to "Minha empresa quer ajudar",root_path, class: "white"
 .container
   .row.mar-top-lg
     .col-sm-12.col-md-3.mar-top-sm
@@ -133,7 +104,7 @@
         |Você ajuda a comprar alimentos, material de limpeza e higiene e outros itens fundamentais para o funcionamento do Instituto.
       .tac.pad-md
         button.btn-warning.btn-lg.white.semi-rounded
-          = link_to "FAZER DOAÇÃO",new_user_registration_path, class: "white"
+          = link_to "FAZER DOAÇÃO",new_unique_donation_path, class: "white"
     .col-xs-12.col-md-4.bg-gray
       h2.green.tac
         strong
@@ -142,7 +113,7 @@
         |Você ajuda a comprar tintas, pincéis, papéis, e outros recursos para as atividades educacionais e culturais do Insituto Amparando
       .tac.pad-md
         button.btn-warning.btn-lg.white.semi-rounded
-          = link_to "FAZER DOAÇÃO",new_user_registration_path, class: "white"
+          = link_to "FAZER DOAÇÃO",new_unique_donation_path, class: "white"
     .col-xs-12.col-md-4.bg-gray
       h2.green.tac
         strong
@@ -152,7 +123,7 @@
 
       .tac.pad-md
         button.btn-warning.btn-lg.white.semi-rounded
-          = link_to "FAZER DOAÇÃO",new_user_registration_path, class: "white"
+          = link_to "FAZER DOAÇÃO",new_unique_donation_path, class: "white"
   .row.mar-top-md#empresa
     .col-xs-12.tac
       h2.purple

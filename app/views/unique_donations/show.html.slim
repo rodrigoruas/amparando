@@ -1,0 +1,17 @@
+.container
+  .row.pad-lg
+    .col-xs-12
+      .card.mar-top-md.pad-sm.bg-gray
+        .pad-md
+          h4
+            = "#{current_user.first_name}, Confirme Sua Doação"
+          p
+            | Você será redirecionado para o PagSeguro, onde realizará sua doação com segurança.
+          ul.list-group.mar-top-md
+            li.list-group-item
+              h4.green
+                strong
+                  = "Valor da Doaçao: #{humanized_money_with_symbol(@unique_donation.amount)}"
+          .row
+            .col-xs-12.col-sm-6.pad-sm
+              = link_to "CONFIRMAR", unique_donation_payments_path(@unique_donation, amount: @unique_donation.amount), method: :post, class: "btn-success btn-lg"

@@ -27,7 +27,7 @@
               = f.input :password, required: true, label: "Confirme sua Senha", :input_html => {}, :label_html => {:class => "green"}
         .row
           .col-xs-12.tac
-            p Nos conta um pouco sobre você. Como pode ajudar a Amparando?
+            p Nos conte um pouquinho sobre você. Como pode ajudar a Amparando?
             = f.input :observation, required: true, label: false, as: :text, :input_html => {}, :label_html => {:class => "green", rows: 5}
             = f.button :submit, "CADASTRE-SE", class: "btn-warning btn-orange btn-lg"
             = link_to "Já tenho Conta",new_user_session_path, class: " green navbar-wagon-item navbar-wagon-link"
