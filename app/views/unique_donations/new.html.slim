@@ -1,0 +1,50 @@
+.container.pad-md
+  .row.section-box
+    .col-xs-12
+      h3 Doação para o Instituto
+      p A sua doação é fundamental o e os valores ajudam a manter todos os nossos projetos
+    .row.pad-md
+      .col-xs-12.col-md-4
+        h2.green.tac
+          strong
+            |R$ 10,00
+        p.taj
+          |Você ajuda a comprar alimentos, material de limpeza e higiene e outros itens fundamentais para o funcionamento do Instituto.
+        .tac.pad-sm
+          = simple_form_for [@unique_donation], wrapper: :horizontal_form do |f|
+            = f.input :amount, as: :hidden, :input_html => { :value => "10" }
+            = f.input :user_id, as: :hidden, :input_html => { :value => "#{current_user.id}" }
+            = f.button :submit, 'DOAR R$10,00', class: 'btn-orange btn-lg white semi-rounded'
+      .col-xs-12.col-md-4
+        h2.green.tac
+          strong
+            |R$ 25,00
+        p.taj
+          |Você ajuda a comprar tintas, pincéis, papéis, e outros recursos para as atividades educacionais e culturais do Insituto Amparando.
+        .tac.pad-sm
+          = simple_form_for [@unique_donation], wrapper: :horizontal_form do |f|
+            = f.input :amount, as: :hidden, :input_html => { :value => "25" }
+            = f.input :user_id, as: :hidden, :input_html => { :value => "#{current_user.id}" }
+            = f.button :submit, 'DOAR R$25,00', class: 'btn-orange btn-lg white semi-rounded'
+      .col-xs-12.col-md-4
+        h2.green.tac
+          strong
+            |R$ 50,00
+        p.taj
+          |Você ajuda na realização de passeios culturais, eventos, missões e ações educacionais e de outras necessidades emergenciais do Instituto.
+        .tac.pad-sm
+          = simple_form_for [@unique_donation], wrapper: :horizontal_form do |f|
+            = f.input :amount, as: :hidden, :input_html => { :value => "50" }
+            = f.input :user_id, as: :hidden, :input_html => { :value => "#{current_user.id}" }
+            = f.button :submit, 'DOAR R$50,00', class: 'btn-orange btn-lg white semi-rounded'
+  .row.section-box
+    .col-xs-12.col-md-6
+      h3 Doação de outros valores
+      p Você pode doar qualquer quantia!
+    .col-xs-12.col-md-6
+      .tac.pad-sm
+        = simple_form_for [@unique_donation], wrapper: :horizontal_form do |f|
+          = f.input :amount, label: "Valor"
+          = f.input :user_id, as: :hidden, :input_html => { :value => "#{current_user.id}" }
+          = f.button :submit, 'DOAR', class: 'btn-orange btn-lg white semi-rounded'
+

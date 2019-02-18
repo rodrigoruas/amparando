@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20190217172043) do
+ActiveRecord::Schema.define(version: 20190218101136) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -37,6 +37,16 @@ ActiveRecord::Schema.define(version: 20190217172043) do
     t.index ["user_id"], name: "index_donations_on_user_id"
   end
 
+  create_table "unique_donations", force: :cascade do |t|
+    t.bigint "user_id"
+    t.string "state"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.integer "amount_cents", default: 0, null: false
+    t.string "transaction_id"
+    t.index ["user_id"], name: "index_unique_donations_on_user_id"
+  end
+
   create_table "users", force: :cascade do |t|
     t.string "email", default: "", null: false
     t.string "encrypted_password", default: "", null: false
@@ -61,4 +71,5 @@ ActiveRecord::Schema.define(version: 20190217172043) do
 
   add_foreign_key "donations", "campaigns"
   add_foreign_key "donations", "users"
+  add_foreign_key "unique_donations", "users"
 end

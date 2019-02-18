@@ -1,24 +1,16 @@
 class PaymentsController < ApplicationController
   before_action :authenticate_user!
   def create
-      @donation = Donation.find(params[:donation_id])
       payment = PagSeguro::PaymentRequest.new
-
-      if Rails.env.production?
-        payment.redirect_url = "http://amparando.herokuapp.com/pagamento"
-      else
-        payment.redirect_url = "localhost:3000/pagamento"
-      end
-
-        payment.items << {
-          id: @donation.id,
-          description: @donation.campaign.title,
-          amount: @donation.amount,
-          weight: 0
-        }
-
+      @donation = Donation.find(params[:donation_id])
+      payment.items << {
+        id: @donation.id,
+        description: @donation.campaign.title,
+        amount: @donation.amount,
+        weight: 0
+      }
+      payment.redirect_url = define_redirect_url
       response = payment.register
-
       if response.errors.any?
         raise response.errors.join("\n")
       else
@@ -26,6 +18,36 @@ class PaymentsController < ApplicationController
       end
     end
 
+  def define_redirect_url
+    complement = ""
+    if @donation
+      complement = "pagamento"
+    else
+      complement ="doacao"
+    end
+    if Rails.env.production?
+      "http://amparando.herokuapp.com/#{complement}"
+    else
+      "localhost:3000/#{complement}"
+    end
+  end
+
+  def create_unique
+    @unique_donation = UniqueDonation.find(params[:unique_donation_id])
+    payment.items << {
+      id: @unique_donation.id,
+      description: "#Doação Pontual de #{@unique_donation.amount}",
+      amount: @unique_donation.amount,
+      weight: 0
+    }
+    payment.redirect_url = define_redirect_url
+      response = payment.register
+    if response.errors.any?
+      raise response.errors.join("\n")
+    else
+      redirect_to response.url
+    end
+  end
 
   def pagseguro
     if Rails.env.production?
@@ -42,6 +64,24 @@ class PaymentsController < ApplicationController
       @donation.transaction_id = "TESTE-123-123-123"
       @donation.state = "3"
       @donation.save
+    end
+  end
+
+  def doacao
+    if Rails.env.production?
+      if params.has_key?(:transaction_id)
+        @unique_donation = UniqueDonation.where("user_id = #{current_user.id}").last
+        transaction_id = (params[:transaction_id])
+        @json = payment_json(transaction_id)
+        @unique_donation.transaction_id = transaction_id
+        @unique_donation.state = @json["transaction"]["status"]
+        @unique_donation.save
+      end
+    else
+      @unique_donation = UniqueDonation.where("user_id = #{current_user.id}").last
+      @unique_donation.transaction_id = "TESTE-123-123-123"
+      @unique_donation.state = "3"
+      @unique_donation.save
     end
   end
 

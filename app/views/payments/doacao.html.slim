@@ -1,0 +1,15 @@
+.container
+  .row.pad-lg
+    .col-sm-12
+      .card.mar-top-md.pad-sm.border-green.sld.bg-gray
+        .pad-md
+          h4
+            = "#{current_user.first_name}, sua doação foi confirmada. Veja o Resumo de sua ajuda"
+          ul.list-group
+            li.list-group-item.flex.jcsb
+              h4
+                = "Valor Doado:"
+              h4
+                = humanized_money_with_symbol(@unique_donation.amount)
+
+          = link_to "VOLTAR PARA HOME",root_path, class: "btn-warning btn-lg"
