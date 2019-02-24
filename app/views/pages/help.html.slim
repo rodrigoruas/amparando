@@ -6,36 +6,37 @@
       h3.red
         strong
           |Encontre as opções que mais se adequam mais ao que você busca realizar:
+.wrapper.bg-gray.pad-lg
+  .container
+    .row
+      .col-sm-12.col-md-3.mar-top-sm
+        .card.section-box.pad-sm
+          h4.tac Ser Voluntário (a)
+          p.taj Você pode ser um voluntário(a) e ajudar a Família Amparando a construir um mundo melhor!
+          button.btn-orange.btn-lg.white.semi-rounded.mar-top-md
+            = link_to "Saiba Mais","", class: "white", href: "#voluntario"
+      .col-sm-12.col-md-3.mar-top-sm
+        .card.section-box.pad-sm
+          h4.tac Apadrinhar a Instituição
+          p.taj
+            |O apadrinhamento  é uma forma de ajudar financeiramente os nossos projetos.
+          button.btn-red.btn-lg.white.semi-rounded.mar-top-md
+            = link_to "Saiba Mais",new_user_registration_path, class: "white", href: "#apadrinhar"
+      .col-sm-12.col-md-3.mar-top-sm
+        .card.section-box.pad-sm
+          h4.tac Doar pontualmente
+          p.taj
+            |A sua doação é fundamental o e os valores ajudam a manter todos os nossos projetos.
+          button.btn-red.btn-lg.white.semi-rounded.mar-top-md
+            = link_to "Saiba Mais",new_user_registration_path, class: "white", href: "#doar-dinheiro"
+      .col-sm-12.col-md-3.mar-top-sm
+        .card.section-box.pad-sm
+          h4.tac Empresa Parceira
+          p.taj
+            |Sua empresa pode se tornar um membro da Família Amparando e participar de todos os projetos
+          button.btn-purple.btn-lg.white.semi-rounded.mar-top-md
+              = link_to "Saiba Mais",new_user_registration_path, class: "white", href: "#empresa"
 .container
-  .row.mar-top-lg
-    .col-sm-12.col-md-3.mar-top-sm
-      .card.section-box.pad-sm
-        h4.tac Ser Voluntário (a)
-        p.taj Você pode ser um voluntário(a) e ajudar a Família Amparando a construir um mundo melhor!
-        button.btn-orange.btn-lg.white.semi-rounded.mar-top-md
-          = link_to "Saiba Mais","", class: "white", href: "#voluntario"
-    .col-sm-12.col-md-3.mar-top-sm
-      .card.section-box.pad-sm
-        h4.tac Apadrinhar a Instituição
-        p.taj
-          |O apadrinhamento  é uma forma de ajudar financeiramente os nossos projetos.
-        button.btn-red.btn-lg.white.semi-rounded.mar-top-md
-          = link_to "Saiba Mais",new_user_registration_path, class: "white", href: "#apadrinhar"
-    .col-sm-12.col-md-3.mar-top-sm
-      .card.section-box.pad-sm
-        h4.tac Doar pontualmente
-        p.taj
-          |A sua doação é fundamental o e os valores ajudam a manter todos os nossos projetos.
-        button.btn-red.btn-lg.white.semi-rounded.mar-top-md
-          = link_to "Saiba Mais",new_user_registration_path, class: "white", href: "#doar-dinheiro"
-    .col-sm-12.col-md-3.mar-top-sm
-      .card.section-box.pad-sm
-        h4.tac Empresa Parceira
-        p.taj
-          |Sua empresa pode se tornar um membro da Família Amparando e participar de todos os projetos
-        button.btn-purple.btn-lg.white.semi-rounded.mar-top-md
-            = link_to "Saiba Mais",new_user_registration_path, class: "white", href: "#empresa"
-
   .row.mar-top-md#voluntario
     .col-xs-12.tac
       h2.red
@@ -67,7 +68,8 @@
     .col-xs-12.col-md-6.tac.pad-lg
       button.btn-red.btn-lg.white.semi-rounded
         = link_to "Quero Ser Voluntário(a)",new_user_registration_path, class: "white"
-  .row.mar-top-md#apadrinhar
+.wrapper.bg-gray.pad-md
+  .row#apadrinhar
     .col-xs-12.col-md-12
       h2.red.tac
         strong
@@ -91,12 +93,13 @@
     .col-xs-12.tac.pad-md
       button.btn-red.btn-lg.white.semi-rounded
         = link_to "Quero Apadrinhar Agora",new_user_registration_path, class: "white"
+.container
   .row.mar-top-md#doar-dinheiro
     .col-xs-12.tac
       h2.red
         strong Quero ajudar pontualmente com dinheiro
   .row.mar-top-lg
-    .col-xs-12.col-md-4.bg-gray
+    .col-xs-12.col-md-4
       h2.green.tac
         strong
           |R$ 10,00
@@ -105,7 +108,7 @@
       .tac.pad-md
         button.btn-warning.btn-lg.white.semi-rounded
           = link_to "FAZER DOAÇÃO",new_unique_donation_path, class: "white"
-    .col-xs-12.col-md-4.bg-gray
+    .col-xs-12.col-md-4
       h2.green.tac
         strong
           |R$ 25,00
@@ -114,7 +117,7 @@
       .tac.pad-md
         button.btn-warning.btn-lg.white.semi-rounded
           = link_to "FAZER DOAÇÃO",new_unique_donation_path, class: "white"
-    .col-xs-12.col-md-4.bg-gray
+    .col-xs-12.col-md-4
       h2.green.tac
         strong
           |R$ 100,00
@@ -124,27 +127,30 @@
       .tac.pad-md
         button.btn-warning.btn-lg.white.semi-rounded
           = link_to "FAZER DOAÇÃO",new_unique_donation_path, class: "white"
-  .row.mar-top-md#empresa
-    .col-xs-12.tac
-      h2.purple
-        strong Quero ser um parceiro e ajudar a a Família Amparando
-    .row.mar-top-lg
-      .col-xs-12.col-md-6
-        h4.tac
-          strong Empresa parceira
-        p Sua empresa pode se tornar um membro da Família Amparando e participar do nosso sonho de construir um mundo melhor, através da doação de produtos, serviços, tecnologia ou com doações em dinheiro. Saiba mais como participar .
-      .col-xs-12.col-md-6
-        h4.tac
-          strong Colaboração individual
-        p.taj
-          |Você possui expertise em alguma área e seu trabalho pode ajudar os projetos da Família Amparando? Nós vamos adorar te conhecer !
-    .row.mar-top-lg
-      .col-xs-12.col-md-6.tac
-        button.btn-purple.btn-lg.white.semi-rounded
-          = link_to "Minha Empresa Quer Ajudar",new_user_registration_path, class: "white"
-      .col-xs-12.col-md-6.tac
-        button.btn-purple.btn-lg.white.semi-rounded
-          = link_to "Quero ser profissional colaborador",new_unique_donation_path, class: "white"
+.wrapper.bg-gray.pad-md
+  .container
+    .row#empresa
+      .col-xs-12.tac
+        h2.purple
+          strong Quero ser um parceiro e ajudar a a Família Amparando
+      .row.mar-top-lg
+        .col-xs-12.col-md-6
+          h4.tac
+            strong Empresa parceira
+          p Sua empresa pode se tornar um membro da Família Amparando e participar do nosso sonho de construir um mundo melhor, através da doação de produtos, serviços, tecnologia ou com doações em dinheiro. Saiba mais como participar .
+        .col-xs-12.col-md-6
+          h4.tac
+            strong Colaboração individual
+          p.taj
+            |Você possui expertise em alguma área e seu trabalho pode ajudar os projetos da Família Amparando? Nós vamos adorar te conhecer !
+      .row.mar-top-lg
+        .col-xs-12.col-md-6.tac
+          button.btn-purple.btn-lg.white.semi-rounded
+            = link_to "Minha Empresa Quer Ajudar",new_user_registration_path, class: "white"
+        .col-xs-12.col-md-6.tac
+          button.btn-purple.btn-lg.white.semi-rounded
+            = link_to "Quero ser profissional colaborador",new_unique_donation_path, class: "white"
+.container
   .row.mar-top-md#empresa
     .col-xs-12.tac
       h2.purple
