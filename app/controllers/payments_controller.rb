@@ -1,22 +1,33 @@
 class PaymentsController < ApplicationController
   before_action :authenticate_user!
-  # def create
-  #     payment = PagSeguro::PaymentRequest.new
-  #     @donation = Donation.find(params[:donation_id])
-  #     payment.items << {
-  #       id: @donation.id,
-  #       description: @donation.campaign.title,
-  #       amount: @donation.amount,
-  #       weight: 0
-  #     }
-  #     payment.redirect_url = define_redirect_url
-  #     response = payment.register
-  #     if response.errors.any?
-  #       raise response.errors.join("\n")
-  #     else
-  #       redirect_to response.url
-  #     end
-  #   end
+
+  def create
+    if(params.has_key?(:donation_id))
+      campaign_donation
+    else
+      unique_donation
+    end
+  end
+
+  private
+
+  def campaign_donation
+      payment = PagSeguro::PaymentRequest.new
+      @donation = Donation.find(params[:donation_id])
+      payment.items << {
+        id: @donation.id,
+        description: @donation.campaign.title,
+        amount: @donation.amount,
+        weight: 0
+      }
+      payment.redirect_url = define_redirect_url
+      response = payment.register
+      if response.errors.any?
+        raise response.errors.join("\n")
+      else
+        redirect_to response.url
+      end
+    end
 
   def define_redirect_url
     complement = ""
@@ -32,7 +43,7 @@ class PaymentsController < ApplicationController
     end
   end
 
-  def create
+  def unique_donation
     payment = PagSeguro::PaymentRequest.new
     @unique_donation = UniqueDonation.find(params[:unique_donation_id])
     payment.items << {
@@ -85,8 +96,6 @@ class PaymentsController < ApplicationController
       @unique_donation.save
     end
   end
-
-  private
 
   def payment_json(transaction_id)
     url = "https://ws.pagseguro.uol.com.br/v3/transactions/#{transaction_id}?email=#{PG_EMAIL}&token=#{PG_PRODUCTION_TOKEN}"
