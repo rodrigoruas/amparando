@@ -1,24 +1,52 @@
 .container
-  .row.pad-lg
-    .col-xs-12
-      .card.mar-top-md.pad-sm.bg-gray
-        .row
-          .col-xs-12.col-md-3.tac
-            = image_tag ( "https://res.cloudinary.com/dib2nyadi/image/upload/c_scale,h_150/v1544719851/Amparando/child.jpg"), class: "semi-rounded mar-top-md"
-            - if @campaign.donations.present?
-              h4.orange.mar-top-md
-                = "Total Arrecadado: #{humanized_money_with_symbol(@donation_total)}"
-              h4
-                |Faça Agora sua doação:
+  .row.mar-top-md
+    .col-xs-12.col-md-6
+      h2.bg-green.white.pad-sm.mar-top-0
+        = @campaign.title.upcase
+      h3 Descritivo da campanha
+      p
+        == @campaign.description
+      .row
+        .col-xs-12
+          .row
+            .col-xs-6.col-sm-4
               = simple_form_for [@campaign, @donation], wrapper: :horizontal_form do |f|
-                = f.input :amount, label: "Quero Doar"
+                = f.input :amount, as: :hidden, :input_html => {class: "form-group", value: 10}
                 = f.input :campaign_id, as: :hidden, :input_html => { :value => "#{@campaign.id}" }
                 = f.input :user_id, as: :hidden, :input_html => { :value => "#{current_user.id}" }
-                = f.button :submit, 'Vou Doar', class: 'btn-warning btn-lg'
-          .col-xs-12.col-md-9
-            .green.flex.jcsb
-              h3
-                = @campaign.title
-              h3
-                = " #{@donation_percentage}% de #{humanized_money_with_symbol(@campaign.price)}"
-            == @campaign.description
+                = f.button :submit, 'Doar R$10', class: 'btn-warning btn-lg'
+            .col-xs-6.col-sm-4
+              = simple_form_for [@campaign, @donation], wrapper: :horizontal_form do |f|
+                = f.input :amount, as: :hidden, :input_html => {class: "form-group", value: 25}
+                = f.input :campaign_id, as: :hidden, :input_html => { :value => "#{@campaign.id}" }
+                = f.input :user_id, as: :hidden, :input_html => { :value => "#{current_user.id}" }
+                = f.button :submit, 'Doar R$25', class: 'btn-warning btn-lg'
+            .col-xs-6.col-sm-4
+              = simple_form_for [@campaign, @donation], wrapper: :horizontal_form do |f|
+                = f.input :amount, as: :hidden, :input_html => {class: "form-group", value: 50}
+                = f.input :campaign_id, as: :hidden, :input_html => { :value => "#{@campaign.id}" }
+                = f.input :user_id, as: :hidden, :input_html => { :value => "#{current_user.id}" }
+                = f.button :submit, 'Doar R$50', class: 'btn-warning btn-lg '
+      .row
+        .col-xs-12.taj
+          h4 Você também pode doar outros valores!
+          = simple_form_for [@campaign, @donation] do |f|
+            .form-inline.mar-top-md
+              = f.input :amount, label: "Quanto você pode doar?", :input_html => {class: "form-group mar-left-md"}
+              = f.input :campaign_id, as: :hidden, :input_html => { :value => "#{@campaign.id}" }
+              = f.input :user_id, as: :hidden, :input_html => { :value => "#{current_user.id}" }
+              = f.button :submit, 'Doar Agora', class: 'btn-warning btn-lg mar-left-md '
+    .col-xs-12.col-md-6
+      = image_tag "#{@campaign.photo}", style: "width: 100%"
+      .row
+        .col-xs-12.col-md-6
+          h2
+            |Total Necessário
+            h2
+              strong
+                = "#{humanized_money_with_symbol(@campaign.price)}"
+        .col-xs-12.col-md-6
+          h2.green
+            = "Arrecadamos"
+          h2.green
+            = "#{@donation_percentage} %"
