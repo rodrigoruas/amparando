@@ -1,5 +1,5 @@
 .container
-  .row.pad-lg
+  .row
     .col-xs-12
       h2.pad-sm
         |Campanhas Ativas
@@ -10,7 +10,7 @@
       - @campaigns.each do |campaign|
         .row
           .col-xs-12
-            .card.mar-top-md.pad-sm.border-green.sld.bg-gray
+            .card.mar-top-md.mar-bottom-md.pad-sm.border-green.sld.bg-gray
               .row
                 .col-xs-12.col-md-3
                   = image_tag ( "#{campaign.photo}"), class: "semi-rounded mar-top-md card-img"
