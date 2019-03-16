@@ -12,9 +12,14 @@
           = link_to "Quem Somos",about_path, class: "navbar-wagon-item navbar-wagon-link"
           = link_to "Quero Ajudar", help_path, class: "navbar-wagon-item navbar-wagon-link"
           = link_to "Campanhas", campaigns_path, class: "navbar-wagon-item navbar-wagon-link"
-          - if user_signed_in?
+          - if user_signed_in? && current_user.admin == false
             .navbar-wagon-item.navbar-wagon-link.white
               = "Bem vindo, #{current_user.first_name}"
+            = link_to destroy_user_session_path, method: :delete do
+              .navbar-wagon-item.navbar-wagon-link Logout
+          - elsif user_signed_in? && current_user.admin == true
+            .navbar-wagon-item.navbar-wagon-link.white
+              = link_to "Admin", admin_campaigns_path, class: "navbar-wagon-item navbar-wagon-link"
             = link_to destroy_user_session_path, method: :delete do
               .navbar-wagon-item.navbar-wagon-link Logout
           - else
@@ -28,7 +33,10 @@
               li= link_to "Quem Somos", about_path, class: "navbar-wagon-item navbar-wagon-link"
               li= link_to "Quero Ajudar", help_path, class: "navbar-wagon-item navbar-wagon-link"
               li= link_to "Campanhas", campaigns_path, class: "navbar-wagon-item navbar-wagon-link"
-              - if user_signed_in?
-                li= link_to "Logout", destroy_user_session_path, class: "navbar-wagon-item navbar-wagon-link"
+              - if user_signed_in? && current_user.admin == false
+                li= link_to "Logout", destroy_user_session_path, method: :delete
+              - elsif user_signed_in? && current_user.admin == true
+                li= link_to "Admin", admin_campaigns_path, class: "navbar-wagon-item navbar-wagon-link"
+                li= link_to "Logout", destroy_user_session_path, method: :delete
               - else
                  li= link_to "Login", new_user_session_path, class: "navbar-wagon-item navbar-wagon-link"
