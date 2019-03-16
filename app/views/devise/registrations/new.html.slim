@@ -10,19 +10,19 @@
           .col-xs-12.col-md-6
             .row.pad-xs
               = f.input :first_name, required: true, autofocus: true, label: "Nome", :input_html => {}, :label_html => {:class => "green"}
-              .row.pad-xs
-              = f.input :city, required: true, autofocus: true, label: "Cidade", :input_html => {}, :label_html => {:class => "green"}
-              .row.pad-xs
-              = f.input :phone, required: false, autofocus: true, label: "Telefone", :input_html => {}, :label_html => {:class => "green"}
-            .row.pad-xs
-              = f.input :password, required: true, label: "Cria sua Senha", :input_html => {}, :label_html => {:class => "green"}
-          .col-xs-12.col-md-6
             .row.pad-xs
               = f.input :last_name, required: true, autofocus: true, label: "Sobrenome", :input_html => {}, :label_html => {:class => "green"}
             .row.pad-xs
+              = f.input :email, required: true, label: "E-mail", :input_html => {}, :label_html => {:class => "green"}
+              .row.pad-xs
+              = f.input :phone, required: false, autofocus: true, label: "Telefone", :input_html => {}, :label_html => {:class => "green"}
+          .col-xs-12.col-md-6
+            .row.pad-xs
+              = f.input :city, required: true, autofocus: true, label: "Cidade", :input_html => {}, :label_html => {:class => "green"}
+            .row.pad-xs
               = f.input :state, required: true, autofocus: true, label: "Estado", :input_html => {}, :label_html => {:class => "green"}
             .row.pad-xs
-              = f.input :email, required: true, label: "E-mail", :input_html => {}, :label_html => {:class => "green"}
+              = f.input :password, required: true, label: "Cria sua Senha", :input_html => {}, :label_html => {:class => "green"}
             .row.pad-xs
               = f.input :password, required: true, label: "Confirme sua Senha", :input_html => {}, :label_html => {:class => "green"}
         .row

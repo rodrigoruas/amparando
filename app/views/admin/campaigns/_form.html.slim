@@ -14,7 +14,7 @@
           .panel-heading#info-bas
             h4 Criar Campanha
           .panel-body
-            = f.input :title, maxlength: 55, char_counter: true
+            = f.input :title, maxlength: 55, char_counter: true, label: "Título da Campanha"
             = f.input :short_description, label: "Descrição Curta", input_html: {rows: 10 }
             = f.input :description, label: "Descrição", as: :trix_editor, input_html: { class: 'simple-editor', rows: 100 }
             = f.input :price, label: "Valor da Campanha"
