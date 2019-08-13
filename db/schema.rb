@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20190218101136) do
+ActiveRecord::Schema.define(version: 20190721001123) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -44,6 +44,7 @@ ActiveRecord::Schema.define(version: 20190218101136) do
     t.datetime "updated_at", null: false
     t.integer "amount_cents", default: 0, null: false
     t.string "transaction_id"
+    t.jsonb "payment"
     t.index ["user_id"], name: "index_unique_donations_on_user_id"
   end
 
