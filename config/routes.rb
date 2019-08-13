@@ -5,7 +5,7 @@ Rails.application.routes.draw do
 
   root to: 'pages#home'
   get "/sobre-nos", to: 'pages#about', as: :about
-  get "/pagamento", to: 'payments#pagseguro', as: :pagseguro
+  # get "/pagamento", to: 'payments#pagseguro', as: :pagseguro
   get "/quero-ajudar", to: 'pages#help', as: :help
   get "/doar-agora", to: "unique_donations#new"
   get "/doacao", to: "payments#doacao"

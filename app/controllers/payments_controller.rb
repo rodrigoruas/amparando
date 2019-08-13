@@ -17,12 +17,11 @@ class PaymentsController < ApplicationController
     description:  "Doação Amparando JG",
     currency:     @unique_donation.amount.currency
   )
-
   @unique_donation.update(payment: charge.to_json, state: 'paid')
   redirect_to unique_donation_path(@unique_donation)
 
   rescue Stripe::CardError => e
     flash[:alert] = e.message
-    redirect_to redirect_to order_path(@unique_donation)
+    redirect_to unique_donation_path(@unique_donation)
   end
 end

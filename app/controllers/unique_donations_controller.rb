@@ -20,6 +20,6 @@ class UniqueDonationsController < ApplicationController
   private
 
   def unique_donation_params
-    params.require(:unique_donation).permit(:amount, :user_id)
+    params.require(:unique_donation).permit(:amount, :user_id, :payment, :transaction_id, :state)
   end
 end
