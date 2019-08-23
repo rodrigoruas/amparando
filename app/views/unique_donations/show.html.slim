@@ -12,9 +12,11 @@
                   = "Valor da Doaçao: #{humanized_money_with_symbol(@unique_donation.amount)}"
           .row
             .col-xs-12.col-sm-6.pad-sm
-              / = link_to "CONFIRMAR", unique_donation_payments_path(@unique_donation, amount: @unique_donation.amount), method: :post, class: "btn-success btn-lg"
               - unless @unique_donation.state == "paid"
-                = form_tag  unique_donation_payments_path(@unique_donation) do
-                  script src="https://checkout.stripe.com/checkout.js" class="stripe-button pad-0" id="stripe-button" data-key="#{Rails.configuration.stripe[:publishable_key]}" data-name="Amparando JG" data-email="#{current_user.email}" data-description="Dados do Cartão de Crédito" data-amount="#{@unique_donation.amount_cents}" data-currency="#{@unique_donation.amount.currency}" data-label="Faça sua Doação com Cartão de Crédito" data-locale="br"
+                p Você pode fazer sua doação com cartão de crédito diretamente por aqui ou via PayPal!
+                .flex.jcsb
+                  = form_tag  unique_donation_payments_path(@unique_donation) do
+                    script src="https://checkout.stripe.com/checkout.js" class="stripe-button pad-0" id="stripe-button" data-key="#{Rails.configuration.stripe[:publishable_key]}" data-name="Amparando JG" data-email="#{current_user.email}" data-description="Dados do Cartão de Crédito" data-amount="#{@unique_donation.amount_cents}" data-currency="#{@unique_donation.amount.currency}" data-label="Cartão de Crédito" data-locale="br"
+                  = link_to "PayPal", "http://www.paypal.me/institutoamparando", class: "btn btn-info stripe-button"
               - else
                 h2 SUA DOAÇÃO FOI CONFIRMADA
