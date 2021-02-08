@@ -22,10 +22,10 @@ gem 'coffee-rails', '~> 4.2'
 gem 'turbolinks', '~> 5'
 gem 'jbuilder', '~> 2.5'
 gem 'slim'
-gem 'carrierwave', '~> 1.2'
+gem 'carrierwave', '~> 1.3'
 gem 'dotenv-rails', groups: [:development, :test]
 gem 'cloudinary', '~> 1.9.1'
-gem 'carrierwave', '~> 1.2'
+gem 'carrierwave', '~> 1.3'
 gem 'trix'
 gem "pagseguro-oficial", "~> 2.5.0"
 gem 'stripe'
